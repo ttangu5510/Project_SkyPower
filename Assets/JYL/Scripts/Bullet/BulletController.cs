@@ -12,9 +12,14 @@ namespace JYL
             rig.useGravity = false;
         }
 
-        private void OnTriggerEnter(Collider other)
+        void Update()
+        {
+
+        }
+        private void OnCollisionEnter(Collision collision)
         {
             gameObject.SetActive(false);
         }
+
     }
 }

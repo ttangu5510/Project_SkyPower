@@ -14,4 +14,28 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/KYG/Prototype/Scenes/Test Scene2.unity
     guid: 4429047150bc8b94fb3d78141e2b3417
+  - enabled: 1
+    path: Assets/YSK/RnD/Scene/RnDBaseStageScene.unity
+    guid: fe79315e3aa2f864f888bc15cf5babd5
+  - enabled: 1
+    path: Assets/YSK/RnD/Scene/RndBootstrapScene.unity
+    guid: 15488e59d8faed448b72d8b19fc12d5f
+  - enabled: 1
+    path: Assets/YSK/RnD/Scene/RnDEndlessStageScene.unity
+    guid: 38930ecf138796e4d9b29a0836f41b5f
+  - enabled: 1
+    path: Assets/YSK/RnD/Scene/RnDMainMenu.unity
+    guid: d71c3b832aa45784ebf11d0a1a11978c
+  - enabled: 1
+    path: Assets/YSK/RnD/Scene/RnDMainStageSelectScene.unity
+    guid: 12d61fc9e45d9254dbe338180b2b3485
+  - enabled: 1
+    path: Assets/YSK/RnD/Scene/RnDPartyScene.unity
+    guid: 68030976120a8634496d0900bd8caa6e
+  - enabled: 1
+    path: Assets/YSK/RnD/Scene/RnDStoreScene.unity
+    guid: 5351277f363e81b43a968ba7150d7d3b
+  - enabled: 1
+    path: Assets/YSK/RnD/Scene/RnDSubStageSelectScene.unity
+    guid: fcae6a53577a6e241af5f186f90653c7
   m_configObjects: {}

@@ -23,20 +23,24 @@ namespace LJ2
             }
         }
 
+        // 세이브할 정보 목록 : SaveData 를 상속 받아야 함
+        public PlayerSave player;
+
+
         // 정보 별 저장, 로드, 삭제 함수 따로 구현
-        public void PlayerSave(CharictorSave target, int index)
+        public void PlayerSave(int index)
         {
-            DataSaveController.Save(target, index);
+            DataSaveController.Save(player.saveDataSample, index);
         }
 
-        public void PlayerLoad(CharictorSave target, int index)
+        public void PlayerLoad(int index)
         {
-            DataSaveController.Load(ref target, index);
+            DataSaveController.Load(ref player.saveDataSample, index);
         }
 
-        public void PlayerDelete(CharictorSave target, int index)
+        public void PlayerDelete(int index)
         {
-            DataSaveController.Delete(target, index);
+            DataSaveController.Delete(player.saveDataSample, index);
         }
     }
 }

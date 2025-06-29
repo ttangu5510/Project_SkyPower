@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using JYL;
 using UnityEngine;
 
-public abstract class BulletPatternData : MonoBehaviour
+public abstract class BulletPatternData : ScriptableObject
 {
-    protected ObjectPool objectPool => FindObjectOfType<ObjectPool>();
-    public abstract IEnumerator Shoot(Transform firePoint, GameObject bulletPrefab, float bulletSpeed);
+    public abstract void Shoot(Transform firePoint, GameObject bulletPrefab, float bulletSpeed);
 }

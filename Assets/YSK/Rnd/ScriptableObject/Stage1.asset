@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0e5a231cbc9c7d4d85769f3bb00b2d5, type: 3}
+  m_Name: Stage1
+  m_EditorClassIdentifier: 
+  stageID: 1
+  stageName: Stage1
+  sceneName: RnDBaseStageScene
+  duration: 300
+  mapPrefabs:
+  - {fileID: 255603948662158416, guid: 362c57ffea7d3bb48b6a9f390332d77c, type: 3}
+  - {fileID: 7668984884236379141, guid: 56f251c5778277c4ca0472a6d0f91b9c, type: 3}
+  - {fileID: 8380167807526418686, guid: f57e2afa53beb734f85838d709b918a7, type: 3}
+  - {fileID: 8380167807526418686, guid: 99ad706c52e03b449b4e9c858dfd610b, type: 3}
+  subStages:
+  - subStageID: 0
+    subStageName: 
+    customMapPrefabs: []
+    customDifficulty: 0
+    hasSpecialMechanics: 0
+    specialMechanicsDescription: 
+  - subStageID: 0
+    subStageName: 
+    customMapPrefabs: []
+    customDifficulty: 0
+    hasSpecialMechanics: 0
+    specialMechanicsDescription: 
+  - subStageID: 0
+    subStageName: 
+    customMapPrefabs: []
+    customDifficulty: 0
+    hasSpecialMechanics: 0
+    specialMechanicsDescription: 
+  - subStageID: 0
+    subStageName: 
+    customMapPrefabs: []
+    customDifficulty: 0
+    hasSpecialMechanics: 0
+    specialMechanicsDescription: 
+  - subStageID: 0
+    subStageName: 
+    customMapPrefabs: []
+    customDifficulty: 0
+    hasSpecialMechanics: 0
+    specialMechanicsDescription: 
+  baseDifficulty: 1
+  difficultyIncreasePerSubStage: 0.2

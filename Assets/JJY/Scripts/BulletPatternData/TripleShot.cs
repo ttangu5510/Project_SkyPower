@@ -3,39 +3,32 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
-using System;
-using JYL;
 
+[CreateAssetMenu(fileName = "TripleShotData", menuName = "BulletPattern/TripleShotData")]
 public class TripleShot : BulletPatternData
 {
     private int shotCount = 3;
-    private float delayBetweenshots = 0.1f;
-    private float fireDelay = 2f;
-    public float bulletReturnTimer = 1.5f;
-    public override IEnumerator Shoot(Transform firePoint, GameObject bulletPrefab, float bulletSpeed)
+    public override void Shoot(Transform firePoint, GameObject bulletPrefab, float bulletSpeed)
     {
-        BulletPrefabController bullets = objectPool.ObjectOut() as BulletPrefabController;
-
-        while (true)
+        for (int i = 0; i < shotCount; i++)
         {
-            // bullets.transform.position = firePoint.position;
-            for (int i = 0; i < shotCount; i++)
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            if (rb != null)
             {
-                // bullet.ReturnToPool(bulletReturnTimer);
-                foreach (BulletInfo info in bullets.bullet)
-                {
-                    if (info.rig != null)
-                    {
-                        info.trans.gameObject.SetActive(true);
-                        info.trans.position = firePoint.position;
-                        info.rig.velocity = Vector3.zero;
-                        info.rig.AddForce(firePoint.forward * bulletSpeed, ForceMode.Impulse);
-                        yield return new WaitForSeconds(delayBetweenshots);
-                    }
-                }
+                rb.velocity = firePoint.forward * bulletSpeed;
+                // 대기
             }
-            yield return new WaitForSeconds(fireDelay);
+            else Debug.Log("Triple Shot Error");
+            
+            Debug.Log("Triple Shot : 두두두");
         }
+    }
+
+    // MonoBehaviour를 상속받지 않기 때문에 사용 불가 = 사용하려면 MonoBehaviour를 상속받을 필요가 있음.
+    private IEnumerator TripleShotDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
     }
 }
 

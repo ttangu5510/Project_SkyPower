@@ -129,7 +129,7 @@ namespace IO
         /// <returns>Returns the full file path. 전체 파일 경로를 반환한다.</returns>
         private static string GetFilePath(string fileName, int index)
         {
-            return Path.Combine(BasePath, $"{fileName}_{index}.json");
+            return Path.Combine(BasePath, $"Slot_{index}", $"{fileName}.json");
         }
 
         /// <summary>
@@ -141,6 +141,7 @@ namespace IO
         public void Save<T>(T target, int index) where T : SaveData
         {
             Directory.CreateDirectory(BasePath);
+            Directory.CreateDirectory($"{BasePath}/Slot_{index}");
 
             string filePath = GetFilePath(target.FileName, index);
             string jsonString = JsonUtility.ToJson(target);

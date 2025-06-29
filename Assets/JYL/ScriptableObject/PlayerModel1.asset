@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42f40c8946ca5e7469d8f64a0e715b1f, type: 3}
   m_Name: PlayerModel1
   m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 0}
   id: 1
   playerName: link
   fireType: 0
   playerPower: 1
-  playerSpeed: 10
-  fireSpeed: 45
+  playerSpeed: 5
+  fireSpeed: 15
   firePower: 1

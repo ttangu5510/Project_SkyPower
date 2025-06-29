@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7471564904382508227}
   - component: {fileID: 1737800332505765570}
   - component: {fileID: 1224698854920372086}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: Ground3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 3102409813701368864}
   - component: {fileID: 1973449336432832812}
   - component: {fileID: 8992633875652143480}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: MapObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 1627748525146499326}
   - component: {fileID: 467996786608036059}
   - component: {fileID: 3213747583128553747}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: MapObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 6794373113521438391}
   - component: {fileID: 7141321248034755580}
   - component: {fileID: 3889634648545726292}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: MapObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4127312781665019077}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: Map_Stage3_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -5,6 +5,15 @@ namespace JYL
     public class PooledObject : MonoBehaviour
     {
         public ObjectPool returnPool;
+        void Start()
+        {
+
+        }
+
+        void Update()
+        {
+
+        }
         public void ReturnToPool()
         {
             returnPool.ReturnToPool(this);
