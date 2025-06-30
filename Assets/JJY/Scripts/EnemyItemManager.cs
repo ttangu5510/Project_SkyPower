@@ -8,7 +8,7 @@ public class EnemyItemManager : MonoBehaviour
     public GameObject itemPrefab;
     public int itemCount = 40; // 아이템 개수
     public float itemMoveLimitRange = 2f; // 아이템이 떨어지는 반경 제한
-    public float dropItemSpeed = 0.5f; // 아이템이 퍼져나가는 속도
+    public float dropItemSpeed = 0.5f; // 아이템이 퍼져나가는 속력 , 아이템이 떨어지는 속력.
     public float itemStopTime = 1f; // 몇 초 뒤에 멈출것인가.
 
     void OnEnable()

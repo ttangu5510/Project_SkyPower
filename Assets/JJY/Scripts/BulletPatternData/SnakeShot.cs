@@ -1,17 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
-using System;
 using JYL;
 
-[CreateAssetMenu(fileName = "TripleShot", menuName = "ScriptableObject/BulletPattern/TripleShot")]
-public class TripleShot : BulletPatternData
+public class SnakeShot : BulletPatternData
 {
-    public int shotCount = 3;
+    public int shotCount = 10;
     public float delayBetweenshots = 0.1f;
     public float fireDelay = 2f;
+    public float returnToPoolTimer = 5f;
     public override IEnumerator Shoot(Transform[] firePoints, GameObject bulletPrefab, float bulletSpeed)
     {
         // TODO : ReturnToPool()호출 타이밍 생각해야함. => 플레이어와 충돌 or 시간이 지날 때 ReturnToPool()해야하나?
@@ -23,6 +20,7 @@ public class TripleShot : BulletPatternData
 
                 if (bullet != null)
                 {
+                    // bullet.owner = bulletOwner;
                     bullet.transform.position = firePoints[0].position;
 
                     foreach (BulletInfo info in bullet.bullet)
@@ -39,7 +37,7 @@ public class TripleShot : BulletPatternData
                 yield return new WaitForSeconds(delayBetweenshots);
             }
             yield return new WaitForSeconds(fireDelay);
+            
         }
     }
 }
-

@@ -9,6 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18b3208c5330bb4459f1a37bc9d2c30f, type: 3}
-  m_Name: TripleShotData
+  m_Script: {fileID: 11500000, guid: aae44e2114a3b89408072486ae813af1, type: 3}
+  m_Name: CircleShapeShot
   m_EditorClassIdentifier: 
+  shotCount: 8
+  fireDelay: 0.5
+  fireDelayBetweenShots: 0.1

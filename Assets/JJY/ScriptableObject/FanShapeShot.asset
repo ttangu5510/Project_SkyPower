@@ -9,6 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d4e528faa2e9714ab24d8e0d93410c2, type: 3}
-  m_Name: SingleShotData
+  m_Script: {fileID: 11500000, guid: e6e22353556ad464f9818ccbdc7f602e, type: 3}
+  m_Name: FanShapeShot
   m_EditorClassIdentifier: 
+  shotCount: 5
+  fireDelay: 1
+  fireDelayBetweenShots: 0
+  fanShapeangle: 90

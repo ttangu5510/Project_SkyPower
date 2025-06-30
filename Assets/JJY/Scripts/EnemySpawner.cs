@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private float spawnDelay = 2f; // 적 소환 간격
+    public ObjectPool objectPool;
     private void Start()
     {
         StartCoroutine(SpawnEnemy());
@@ -15,8 +16,10 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < enemyPrefabs.Length; i++)
         {
-            GameObject enemy = Instantiate(enemyPrefabs[i], transform.position, Quaternion.identity);
-            enemy.transform.SetParent(transform);
+            GameObject enemyobj = Instantiate(enemyPrefabs[i], transform.position, Quaternion.identity);
+            enemyobj.transform.SetParent(transform);
+            Enemy enemy = enemyobj.GetComponent<Enemy>();
+            enemy.objectPool = objectPool;
             yield return new WaitForSeconds(spawnDelay);
         }
         // 다 소환하면 그 이후엔 어떻게 할 것인가?

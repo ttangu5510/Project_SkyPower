@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 4398885731801022728}
   - component: {fileID: 1579580377331602160}
   m_Layer: 8
-  m_Name: FlyEnemy - TripleShot
+  m_Name: FlyEnemy - TripleShotToPlayerPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
   isMoving: 0
   firePoints:
   - {fileID: 7715130198389869489}
-  BulletPattern: {fileID: 11400000, guid: 60f7d14098b8a3f409a18472fd39202c, type: 2}
+  BulletPattern: {fileID: 11400000, guid: a0cba009d06c25643982d3f5edd08073, type: 2}
   objectPool: {fileID: 7413765455485792788, guid: df334d57865a00d46b3159e7f5f777e0,
     type: 3}
   bulletSpeed: 10
