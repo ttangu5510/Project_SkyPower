@@ -66,9 +66,13 @@ public class SpawnManager : MonoBehaviour
         // 보스 소환 후, 보스가 처치될 때까지 안벗어남
         while (enemyCount > 0) yield return null;
 
-        Debug.Log("All Stages Complete!");
-        
+        CompleteStage();
         StopCoroutine(playRoutine);
         playRoutine = null;
+    }
+    private void CompleteStage()
+    {
+        Manager.Game.SetGameClear();
+
     }
 }

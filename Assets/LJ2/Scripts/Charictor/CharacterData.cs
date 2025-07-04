@@ -11,12 +11,13 @@ namespace LJ2
         public int id;
         public Grade grade;
         public string characterName;
+        public GameObject characterModel;
 
         public Elemental elemental;
         public int maxLevel;
         public int hp;
         public int hpPlus;
-        public GameObject attackType;
+        public GameObject bulletPrefab;
         public float attackDamage;
         public float damagePlus;
         public float attackSpeed;
@@ -31,6 +32,8 @@ namespace LJ2
 
         public Parry parry;
         public int parryCool;
+
+        public Sprite icon;
         public Sprite image;
 
         public int upgradeUnitDefault;

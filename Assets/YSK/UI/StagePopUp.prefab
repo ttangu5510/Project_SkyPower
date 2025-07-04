@@ -108,7 +108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3570873013184943
 RectTransform:
   m_ObjectHideFlags: 0
@@ -158,9 +158,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uB2E4\uC2DC\uD558\uAE30"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c9e0bced9429d1e45907b46eb96ce624, type: 2}
-  m_sharedMaterial: {fileID: -5548453337289332318, guid: c9e0bced9429d1e45907b46eb96ce624,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -445,8 +444,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Stage Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c9e0bced9429d1e45907b46eb96ce624, type: 2}
-  m_sharedMaterial: {fileID: -5548453337289332318, guid: c9e0bced9429d1e45907b46eb96ce624,
+  m_fontAsset: {fileID: 11400000, guid: 6c3783b6c551cf040a8f54e80b06db28, type: 2}
+  m_sharedMaterial: {fileID: -5548453337289332318, guid: 6c3783b6c551cf040a8f54e80b06db28,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -606,7 +605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3959015527116423866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -656,9 +655,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC911\uB2E8\uD558\uAE30"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c9e0bced9429d1e45907b46eb96ce624, type: 2}
-  m_sharedMaterial: {fileID: -5548453337289332318, guid: c9e0bced9429d1e45907b46eb96ce624,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

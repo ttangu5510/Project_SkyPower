@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/KYG/Prototype/Scenes/Test Scene.unity
     guid: 724bcd2598ded4642ad5f0e6ca04073c
-  - enabled: 1
+  - enabled: 0
     path: Assets/KYG/Prototype/Scenes/Test Scene2.unity
     guid: 4429047150bc8b94fb3d78141e2b3417
   - enabled: 1

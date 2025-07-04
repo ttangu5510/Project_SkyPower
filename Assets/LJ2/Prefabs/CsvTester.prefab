@@ -9,9 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3235959484589281749}
-  - component: {fileID: 8691476222529792796}
-  - component: {fileID: 6819432051843777001}
-  - component: {fileID: 8504791920078847591}
   - component: {fileID: 2442602868820624130}
   m_Layer: 0
   m_Name: CsvTester
@@ -35,54 +32,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8691476222529792796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8922811755652027464}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a572f77a7daf848b939ab92c4df1ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  table:
-    _filePath: LJ2/Scripts/IO/Csv/CsvToSO.csv
-    <SplitSymbol>k__BackingField: 44
---- !u!114 &6819432051843777001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8922811755652027464}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ee92e7b70b5ec1479c4391209ace354, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  table:
-    _filePath: LJ2/Scripts/IO/Csv/oneCharictorTest.csv
-    <SplitSymbol>k__BackingField: 44
-  secondTable:
-    _filePath: LJ2/Scripts/IO/Csv/SecondTest.csv
-    <SplitSymbol>k__BackingField: 44
---- !u!114 &8504791920078847591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8922811755652027464}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 112ddff4a690d9441bd58e643a4dffa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  table:
-    _filePath: LJ2/Scripts/IO/Csv/CsvToSO.csv
-    <SplitSymbol>k__BackingField: 44
 --- !u!114 &2442602868820624130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   table:
     _filePath: LJ2/Scripts/IO/Csv/ProjectSkyPower_DataTable - Character_Table.csv
+    resourcePath: CSV/ProjectSkyPower_DataTable - Character_Table
     <SplitSymbol>k__BackingField: 44
-  characterInventory: {fileID: 0}

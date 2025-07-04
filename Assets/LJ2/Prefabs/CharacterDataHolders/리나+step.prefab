@@ -50,12 +50,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 11400000, guid: 8a6aad331095ea0438d54e7a717f1b37, type: 2}
-  saveTester: {fileID: 0}
   parrying: {fileID: 1435663578925478244}
   ultimate: {fileID: 6010917971181505501}
-  id: 0
   grade: 0
-  name: 
+  charName: 
   elemental: 0
   level: 0
   step: 0
@@ -65,13 +63,16 @@ MonoBehaviour:
   attackSpeed: 0
   moveSpeed: 0
   defense: 0
+  partySet: 0
   ultLevel: 0
   ultDamage: 0
   ultCool: 0
   bulletPrefab: {fileID: 0}
+  ultBulletPrefab: {fileID: 0}
   ultPrefab: {fileID: 0}
   parry: 0
   parryCool: 0
+  icon: {fileID: 0}
   image: {fileID: 0}
   upgradeUnit: 0
 --- !u!114 &1435663578925478244
@@ -107,13 +108,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setUltDelay: 0
+  playerController: {fileID: 0}
+  bulletReturnTimer: 5
+  bulletSpeed: 3
+  ultBulletTime: 3
+  bulletUpgradeTime: 5
   enemyBullet:
     serializedVersion: 2
     m_Bits: 0
   ultLaser: {fileID: 1245939337628991872, guid: 9f306954192d7074d9988a9d41e2f2de,
     type: 3}
+  ultLaserController: {fileID: 0}
   shield: {fileID: 2455596578737599570, guid: 9a8965262ae861b4ead53351321299a8, type: 3}
+  ultShieldController: {fileID: 0}
   ultAll: {fileID: 4856827749028106880, guid: e90ac312efb039242bc3fbe9269974a5, type: 3}
+  ultAllController: {fileID: 0}
   defense: 1
 --- !u!1001 &4711318184684082424
 PrefabInstance:

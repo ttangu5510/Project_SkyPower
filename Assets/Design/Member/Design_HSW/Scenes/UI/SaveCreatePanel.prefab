@@ -996,4 +996,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa837fee29cf9a54fa7504f87e6921e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterInit: {fileID: 0}
   maxInputCount: 8

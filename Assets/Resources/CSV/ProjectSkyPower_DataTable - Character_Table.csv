@@ -1,0 +1,30 @@
+캐릭터ID,등급,이름,돌파레벨,돌파레벨 초기값,속성,기본값 레벨,최대레벨,초기 체력,레벨 별 체력 증가 배율,기본 공격,초기공격력,레벨 별 공격력 증가율,공격속도,이동속도,최대 실드 수,궁극기,궁극기 레벨,궁극기 쿨 초기값,궁극기 쿨 감소,궁극기 공격력,궁극기 효과,궁극기 이펙트,패링,패링 쿨타임,패링 효과,캐릭터이미지,요구 재화 초기값,요구 재화 증가값,평타 에셋 이름,궁극기 에셋 이름
+Char_Id,Char_Grade,Char_Name,Step_Lv,Step_Lv_Default,Char_Elemental,Char_Lv,Char_MaxLv,Char_hp,hp_Plus,Char_AktType,Char_AtkDmg,Char_DmgPlus,Char_AtkSpd,Char_Spd,Char_defens,Char_Skill,Ult_Lv,Ult_Cool_Default,Ult_Cool_Reduce,Ult_Atk,Ult_Lore,Ult_Visual,Parry,Parry_Cool,Parry_Lore,Char_Img,Char_Upgrade_Unit_Default,Char_Upgrade_Unit_Plus,AtkAsset_Name,UltAsset_Name
+10001,SSR,레이나+step,step++,0,물,1,30,201,10,레이나,20,10,1,100,2,레이나 Lv1,char_Skill +1+ step,80,10,공격력 * [(150+25*step^2)/100],M/N/I,레이나_궁극기,방어막,10,실드 3회 부여,레이나.png,5000,5000,Projectile 14,Effect_28
+10002,SSR,클레아+step,step++,0,불,1,30,201,10,클레아,40,10,0.75,100,2,클레아Lv1,char_Skill +1+ step,80,10,공격력* [(120+20*step)/100],K/L,클레아_궁극기,무적,3,1초 무적,클레아.png,5000,5000,Projectile 9,Effect_04
+10003,SSR,루나+step,step++,0,바람,1,30,201,10,루나,20,10,1,100,2,루나Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step) / 100],E,루나_궁극기,반사B,5,탄막의 이동 방향을 반대로 바꾸며 방향이 바낀 탄막에 적이 닿을 시 데미지,루나.png,5000,5000,Projectile 22,Effect_39
+10004,SSR,펜리르+step,step++,0,불,1,30,201,10,펜리르,30,10,0.75,100,2,펜리르Lv1,char_Skill +1+ step,80,10,공격력*[(130+30*step)/100],J/I,펜리르_궁극기,무적,3,1초 무적,펜리르.png,5000,5000,Projectile 24,Effect_22
+10005,SSR,헬+step,step++,0,바람,1,30,201,10,헬,20,10,1,100,2,헬Lv1,char_Skill +1+ step,60,10,공격력*[(12.5*step^2+37.5*step+150)/100],H/I,헬_궁극기,반사B,5,탄막의 이동 방향을 반대로 바꾸며 방향이 바낀 탄막에 적이 닿을 시 데미지,헬.png,5000,5000,Projectile 10,Effect_19
+10006,SSR,요르+step,step++,0,물,1,30,201,10,요르,20,10,1,100,2,요르Lv1,char_Skill +1+ step,70,10,공격력*[(12.5*step^2+37.5*step+150)/100],A/B/D,요르_궁극기,방어막,10,실드 3회 부여,요르.png,5000,5000,Projectile 8,Effect_07
+10007,R,폴터+step,step++,0,불,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,폴터.png,2500,2500,Projectile 1,Effect_31
+10008,R,아시도+step,step++,0,바람,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,아시도.png,2500,2500,Projectile 1,Effect_31
+10009,R,릭 리쳐+step,step++,0,물,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,릭리쳐.png,2500,2500,Projectile 1,Effect_31
+10010,R,로빈+step,step++,0,불,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,로빈.png,2500,2500,Projectile 1,Effect_31
+10011,R,리나+step,step++,0,바람,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,리나.png,2500,2500,Projectile 1,Effect_31
+10012,R,이바라키+step,step++,0,물,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,이바라키.png,2500,2500,Projectile 1,Effect_31
+10013,R,이부키+step,step++,0,불,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,이부키.png,2500,2500,Projectile 1,Effect_31
+10014,R,유혜나+step,step++,0,바람,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,유혜나.png,2500,2500,Projectile 1,Effect_31
+10015,R,안시연+step,step++,0,물,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,안시연.png,2500,2500,Projectile 1,Effect_31
+10016,R,도로시+step,step++,0,불,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,도로시.png,2500,2500,Projectile 1,Effect_31
+10017,R,리 메이린+step,step++,0,바람,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,리메이린.png,2500,2500,Projectile 1,Effect_31
+10018,R,리우 메이+step,step++,0,물,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,리우메이.png,2500,2500,Projectile 1,Effect_31
+10019,R,크루드+step,step++,0,불,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,크루드.png,2500,2500,Projectile 1,Effect_31
+10020,R,알레그라+step,step++,0,바람,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,알레그라.png,2500,2500,Projectile 1,Effect_31
+10021,R,신시아+step,step++,0,물,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,신시아.png,2500,2500,Projectile 1,Effect_31
+10022,R,아이라+step,step++,0,불,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,아이라.png,2500,2500,Projectile 1,Effect_31
+10023,R,글라+step,step++,0,바람,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,글라.png,2500,2500,Projectile 1,Effect_31
+10024,R,휴 브리스+step,step++,0,물,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,휴브리스.png,2500,2500,Projectile 1,Effect_31
+10025,R,이바나치+step,step++,0,불,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,이바나치.png,2500,2500,Projectile 1,Effect_31
+10026,R,엘+step,step++,0,바람,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,엘.png,2500,2500,Projectile 1,Effect_31
+10027,R,르뤼에+step,step++,0,물,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,르뤼에.png,2500,2500,Projectile 1,Effect_31
+10028,R,M-22,step++,0,불,1,30,100,5,4성평타,10,5,1,100,1,4성 궁극기 Lv1,char_Skill +1+ step,100,10,공격력*[(150+50*step)/100],O/I,4성_궁극기,-,-,-,르뤼에.png,2500,2500,Projectile 1,Effect_31

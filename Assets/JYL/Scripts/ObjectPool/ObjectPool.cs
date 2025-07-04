@@ -9,8 +9,8 @@ namespace JYL
     {
         public EnemyType enemyType;
         [Header("Set References")]
-        [SerializeField] PooledObject poolObject;
-        
+        [SerializeField] public PooledObject poolObject;
+
         [Header("Set Value")]
         [Range(1, 100)][SerializeField] int poolSize = 5;
 
@@ -21,15 +21,7 @@ namespace JYL
         {
             CreatePool();
         }
-        void Start()
-        {
-
-        }
-
-        void Update()
-        { 
-        }
-        private void CreatePool()
+        public void CreatePool()
         {
             pool = new Stack<PooledObject>();
             for (int i = 0; i < poolSize; i++)
@@ -43,8 +35,8 @@ namespace JYL
         public PooledObject ObjectOut()
         {
             PooledObject go;
-            
-            if (pool.Count>0)
+
+            if (pool.Count > 0)
             {
                 go = pool.Pop();
             }
@@ -57,7 +49,7 @@ namespace JYL
             go.gameObject.SetActive(true);
             return go;
         }
-        public void ReturnToPool(PooledObject obj,float returnTime = 0f)
+        public void ReturnToPool(PooledObject obj, float returnTime = 0f)
         {
             returnRoutine = StartCoroutine(ReturnRoutine(obj, returnTime));
         }
@@ -67,6 +59,15 @@ namespace JYL
             obj.gameObject.SetActive(false);
             pool.Push(obj);
             returnRoutine = null;
+        }
+        public void ClearPool()
+        {
+            while (pool.Count > 0)
+            {
+                PooledObject obj = pool.Pop();
+                Destroy(obj.gameObject);
+            }
+            pool.Clear();
         }
     }
 }

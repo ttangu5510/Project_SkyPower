@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5043dd61d89d6e247ada5222321b7ca1, type: 3}
+  m_Name: M-22
+  m_EditorClassIdentifier: 
+  id: 10028
+  grade: 1
+  characterName: M-22
+  characterModel: {fileID: 93737742307616152, guid: d7810790045da7f4882f503d09d0517f,
+    type: 3}
+  elemental: 1
+  maxLevel: 30
+  hp: 100
+  hpPlus: 5
+  bulletPrefab: {fileID: 0}
+  attackDamage: 10
+  damagePlus: 5
+  attackSpeed: 1
+  moveSpeed: 100
+  defense: 1
+  ultCoolDefault: 100
+  ultCoolReduce: 10
+  ultLore: 
+  ultVisual: {fileID: 0}
+  parry: 0
+  parryCool: 0
+  icon: {fileID: 21300000, guid: 75546086af6efd34c905e2a103c63871, type: 3}
+  image: {fileID: 21300000, guid: ab24e5429171801428eb6359025c8643, type: 3}
+  upgradeUnitDefault: 2500
+  upgradeUnitPlus: 2500

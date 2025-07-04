@@ -1017,4 +1017,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   table:
     _filePath: LJ2/Scripts/IO/Csv/ProjectSkyPower_DataTable - Character_Table.csv
+    ResourcePath: 
     <SplitSymbol>k__BackingField: 44

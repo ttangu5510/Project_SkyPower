@@ -31,5 +31,15 @@ namespace KYG_skyPower
             Score += value;
             onScoreChanged?.Invoke(Score);
         }
+
+        public void RecordBestScore()
+        {
+            int bestScore = Manager.SDM.runtimeData[Manager.Game.selectWorldIndex].subStages[Manager.Game.selectStageIndex].bestScore;
+            if (Manager.Score.Score > bestScore)
+            {
+                // TODO 신기록 달성
+                Manager.SDM.runtimeData[Manager.Game.selectWorldIndex].subStages[Manager.Game.selectStageIndex].bestScore = bestScore;
+            }
+        }
     }
 }

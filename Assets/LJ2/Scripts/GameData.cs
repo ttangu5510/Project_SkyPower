@@ -7,6 +7,7 @@ using IO;
 public partial class GameData : SaveData
 {
     public string playerName;
+    public int gold;
 
     public CharacterInventory characterInventory;
     public StageInfo[] stageInfo;
@@ -16,6 +17,7 @@ public partial class GameData : SaveData
     {
         // Initialize character inventory
         characterInventory = new CharacterInventory();
+        gold = 1000;
     }
 
 }

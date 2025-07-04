@@ -1,3 +1,4 @@
+using KYG;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -43,25 +44,45 @@ namespace JYL
         }
         private void OnTriggerStay(Collider other)
         {
-            //조건에 따라서 SetActive false
-            // 적한테 테이크 데미지
-            Enemy enemy = other.GetComponent<Enemy>();
-            
-            if (enemy == null)
+            if(gameObject.layer == 7) // 플레이어
             {
-                gameObject.SetActive(false);
-                return;
+                //조건에 따라서 SetActive false
+                // 적한테 테이크 데미지
+                Enemy enemy = other.GetComponent<Enemy>();
+                if (enemy == null)
+                {
+                    gameObject.SetActive(false);
+                    return;
+                }
+                if (!canDeactive && timer <= 0)
+                {
+                    enemy.TakeDamage(attackPower);
+                }
+                else if (canDeactive)
+                {
+                    enemy.TakeDamage(attackPower);
+                    gameObject.SetActive(false);
+                }
             }
-            if(!canDeactive && timer<=0)
+            else if(gameObject.layer == 9)
             {
-                enemy.TakeDamage(attackPower);
+                // 적이 총알 쏜거 처리
+                PlayerController enemy =other.GetComponent<PlayerController>();
+                if (enemy == null)
+                {
+                    gameObject.SetActive(false);
+                    return;
+                }
+                if (!canDeactive && timer <= 0)
+                {
+                    //enemy.TakeDamage(attackPower); // TODO:플레이어 구현필요
+                }
+                else if (canDeactive)
+                {
+                    //enemy.TakeDamage(attackPower); // TODO:플레이어 구현필요
+                    gameObject.SetActive(false);
+                }
             }
-            else if(canDeactive)
-            {
-                enemy.TakeDamage(attackPower);
-                gameObject.SetActive(false);
-            }
-            
         }
         private void OnDisable()
         {

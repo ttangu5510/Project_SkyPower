@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 10006
   grade: 0
-  characterName: 
+  characterName: "\uC694\uB974+step"
+  characterModel: {fileID: 1289051446690023900, guid: 87627f0056ba1214293ba4359fc42bb8,
+    type: 3}
   elemental: 0
   maxLevel: 30
   hp: 201
   hpPlus: 10
-  attackType: {fileID: 0}
+  bulletPrefab: {fileID: 0}
   attackDamage: 20
   damagePlus: 10
   attackSpeed: 1
@@ -31,6 +33,7 @@ MonoBehaviour:
   ultVisual: {fileID: 0}
   parry: 0
   parryCool: 10
-  image: {fileID: 21300000, guid: 683f7a0c1bea59c488fc02f5f902395b, type: 3}
+  icon: {fileID: 21300000, guid: 2eaee8e08aabc4944ab12d3105f456bb, type: 3}
+  image: {fileID: 21300000, guid: 8135db43e3b70b8498ca559020c4af58, type: 3}
   upgradeUnitDefault: 5000
   upgradeUnitPlus: 5000

@@ -18,10 +18,8 @@ MonoBehaviour:
   duration: 300
   mainStageLock: 0
   mapPrefabs:
-  - {fileID: 255603948662158416, guid: 362c57ffea7d3bb48b6a9f390332d77c, type: 3}
-  - {fileID: 7668984884236379141, guid: 56f251c5778277c4ca0472a6d0f91b9c, type: 3}
-  - {fileID: 8380167807526418686, guid: f57e2afa53beb734f85838d709b918a7, type: 3}
-  - {fileID: 8380167807526418686, guid: 99ad706c52e03b449b4e9c858dfd610b, type: 3}
+  - {fileID: 8807305219614094375, guid: 043932ae6cb043e44bf8cd309c24dca9, type: 3}
+  - {fileID: 6930328749638797919, guid: 73cbea1d0149319439bdbadd9e4fcdcc, type: 3}
   subStages:
   - subStageID: 1
     subStageName: 
@@ -29,20 +27,16 @@ MonoBehaviour:
     subStageScore: 0
     stageEnemyData: {fileID: 11400000, guid: 4ba5f9d4beb59164185c4adf3149e85b, type: 2}
     customMapPrefabs:
-    - {fileID: 8380167807526418686, guid: f57e2afa53beb734f85838d709b918a7, type: 3}
-    - {fileID: 7668984884236379141, guid: 56f251c5778277c4ca0472a6d0f91b9c, type: 3}
-    - {fileID: 255603948662158416, guid: 362c57ffea7d3bb48b6a9f390332d77c, type: 3}
-    - {fileID: 8380167807526418686, guid: 99ad706c52e03b449b4e9c858dfd610b, type: 3}
+    - {fileID: 8807305219614094375, guid: 043932ae6cb043e44bf8cd309c24dca9, type: 3}
+    - {fileID: 6930328749638797919, guid: 73cbea1d0149319439bdbadd9e4fcdcc, type: 3}
   - subStageID: 2
     subStageName: 
     subStageLock: 0
     subStageScore: 0
     stageEnemyData: {fileID: 11400000, guid: 4ba5f9d4beb59164185c4adf3149e85b, type: 2}
     customMapPrefabs:
-    - {fileID: 255603948662158416, guid: 0cbc744a2edf4be4c9a032658a1e11a7, type: 3}
-    - {fileID: 7668984884236379141, guid: 84f01115942a1874eb33a9264331240a, type: 3}
-    - {fileID: 8380167807526418686, guid: c4c694f42437f1d4fbf7d42b4d9d9161, type: 3}
-    - {fileID: 8380167807526418686, guid: 4a7efd12c417c4e45af6bd8dc5876fdf, type: 3}
+    - {fileID: 8138977365724899154, guid: 5902eddcb119ad24e85c131483ece74a, type: 3}
+    - {fileID: 7027037902925385015, guid: cf144c2d1a6c9704da6bd8c1f643ae93, type: 3}
   - subStageID: 3
     subStageName: 
     subStageLock: 0

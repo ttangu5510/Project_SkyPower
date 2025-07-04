@@ -27,16 +27,16 @@ MonoBehaviour:
     subStageScore: 0
     stageEnemyData: {fileID: 11400000, guid: 4ba5f9d4beb59164185c4adf3149e85b, type: 2}
     customMapPrefabs:
-    - {fileID: 9008328495826410877, guid: c098b361bd597dd4b81dc46070f131b9, type: 3}
-    - {fileID: 9008328495826410877, guid: c098b361bd597dd4b81dc46070f131b9, type: 3}
+    - {fileID: 8807305219614094375, guid: 043932ae6cb043e44bf8cd309c24dca9, type: 3}
+    - {fileID: 6930328749638797919, guid: 73cbea1d0149319439bdbadd9e4fcdcc, type: 3}
   - subStageID: 2
     subStageName: 
     subStageLock: 0
     subStageScore: 0
     stageEnemyData: {fileID: 11400000, guid: 4ba5f9d4beb59164185c4adf3149e85b, type: 2}
     customMapPrefabs:
-    - {fileID: 3150122496668814207, guid: 8d954335c21f4cc4493449e3ed7f9687, type: 3}
-    - {fileID: 5316317230086782272, guid: 9a4092149594b7f45aa18fdaff74e62c, type: 3}
+    - {fileID: 8138977365724899154, guid: 5902eddcb119ad24e85c131483ece74a, type: 3}
+    - {fileID: 7027037902925385015, guid: cf144c2d1a6c9704da6bd8c1f643ae93, type: 3}
   - subStageID: 3
     subStageName: 
     subStageLock: 0

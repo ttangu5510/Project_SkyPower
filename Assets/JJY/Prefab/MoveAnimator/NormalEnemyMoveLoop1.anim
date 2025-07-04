@@ -229,19 +229,17 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1
+  - time: 0
     functionName: AnimationFire
     data: 
-    objectReferenceParameter: {fileID: 4344951356574126065, guid: 931d470595c6b224faca39abbae45ae4,
-      type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 3.1833334
+  - time: 3.9166667
     functionName: AnimationFire
     data: 
-    objectReferenceParameter: {fileID: 4344951356574126065, guid: 931d470595c6b224faca39abbae45ae4,
-      type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

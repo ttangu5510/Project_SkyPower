@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4526d1dc70ea042b1f8bbc61d6ae14, type: 3}
   m_Name: BossEnemyData
   m_EditorClassIdentifier: 
-  maxHP: 2
+  maxHP: 5000
   enemyIcon: {fileID: 0}
-  bulletPrefab: {fileID: 2146349129725176103, guid: 8a1fcdd1f5dc54a4d9451051893eea3c,
-    type: 3}
   enemyType: 2

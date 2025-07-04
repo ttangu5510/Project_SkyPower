@@ -10,10 +10,11 @@ namespace JYL
 
         private string charPrefabPath = "CharacterPrefabs";
 
-        void OnEnable()
-        {
-            GetCharPrefab();
-        }
+        // TODO : 없어도 되는지 테스트
+        //void OnEnable()
+        //{
+        //    GetCharPrefab();
+        //}
 
         void Update() { }
         public void GetCharPrefab()

@@ -542,6 +542,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyEnemy - ExplosionShot
       objectReference: {fileID: 0}
+    - target: {fileID: 4344951356574126065, guid: dc5d831de61b10146a9d1f6f2280d513,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4398885731801022728, guid: dc5d831de61b10146a9d1f6f2280d513,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -816,7 +821,7 @@ PrefabInstance:
     - target: {fileID: 2146349129725176103, guid: bb944374e33ee544da5dee35ada2bc6d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2754731820770964383, guid: bb944374e33ee544da5dee35ada2bc6d,
         type: 3}
@@ -949,7 +954,7 @@ PrefabInstance:
     - target: {fileID: 6474395160035026942, guid: 9dceecfb8afd8614a916d340985e89ba,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1125,8 +1130,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2442602868820624130, guid: 18bcacf2318602645bf13f25a8e8b11e,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442602868820624130, guid: 18bcacf2318602645bf13f25a8e8b11e,
+        type: 3}
+      propertyPath: table._filePath
+      value: Resources/CSV/ProjectSkyPower_DataTable - Character_Table.csv
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442602868820624130, guid: 18bcacf2318602645bf13f25a8e8b11e,
+        type: 3}
       propertyPath: characterInventory
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2442602868820624130, guid: 18bcacf2318602645bf13f25a8e8b11e,
+        type: 3}
+      propertyPath: table.ResourcePath
+      value: CSV/ProjectSkyPower_DataTable - Character_Table
       objectReference: {fileID: 0}
     - target: {fileID: 3235959484589281749, guid: 18bcacf2318602645bf13f25a8e8b11e,
         type: 3}
@@ -1186,7 +1206,7 @@ PrefabInstance:
     - target: {fileID: 8922811755652027464, guid: 18bcacf2318602645bf13f25a8e8b11e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

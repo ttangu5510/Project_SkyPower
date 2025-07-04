@@ -9,7 +9,7 @@ using System;
 namespace KYG_skyPower
 {
 
-
+#if UNITY_EDITOR
     public class DialogCSVImporter // CSV 읽어서 DialogDataSO 변환
     {
         [MenuItem("Tools/Import Dialog CSV")]
@@ -58,4 +58,5 @@ namespace KYG_skyPower
             return line.Split(',');
         }
     }
+#endif
 }

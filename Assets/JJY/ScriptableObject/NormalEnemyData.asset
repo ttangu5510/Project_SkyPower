@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4526d1dc70ea042b1f8bbc61d6ae14, type: 3}
   m_Name: NormalEnemyData
   m_EditorClassIdentifier: 
-  maxHP: 2
+  maxHP: 60
   enemyIcon: {fileID: 0}
-  bulletPrefab: {fileID: 2146349129725176103, guid: e3a51ed57acaf764bb7c2381eeb11c32,
-    type: 3}
   enemyType: 0

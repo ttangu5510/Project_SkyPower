@@ -1,8 +1,9 @@
+using LJ2;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.InputSystem;
-using LJ2;
 
 namespace JYL
 {
@@ -10,118 +11,129 @@ namespace JYL
     {
         [Header("Set Scriptable Object")]
         [SerializeField] PlayerModel playerModel; // -> 캐릭터 컨트롤러로 대체 예정
-        // CharacterController[] character -> 캐릭터 3명을 배열로 받음. 게임매니저의 파티조합을 가져옴
 
         [Header("Set References")]
         [SerializeField] List<ObjectPool> bulletPools;
-        [SerializeField] Transform muzzlePoint;
+        [SerializeField] public Transform muzzlePoint { get; set; }
         [SerializeField] RectTransform leftUI;
         [SerializeField] RectTransform rightUI;
+        [SerializeField] Animator animator;
         // TODO : UI 시스템 구축 후, 시스템에서 불러오는 식으로 참조 시킨다
 
 
         [Header("Set Value")]
         [Range(0.1f, 5)][SerializeField] float bulletReturnTimer = 2f;
-        [Range(0.1f, 3)][SerializeField] float fireDelay = 1f;
 
         private PlayerInput playerInput;
         private Rigidbody rig;
         private InputAction attackAction;
+        private InputAction parryAction1;
+        private InputAction parryAction2;
+        private InputAction ultAction;
+
         private CharactorController mainCharController;
+        private CharactorController sub1CharController;
+        private CharactorController sub2CharController;
         private CharacterSaveLoader charDataLoader;
-        //private InputAction parryAction1;
-        //private InputAction parryAction2;
-        //private InputAction ultAction;
-        //private InputAction menuAction;
 
         private int hp { get; set; }
         private int attackPower { get; set; }
         private float attackSpeed { get; set; }
         private float moveSpeed { get; set; }
-        private int defence { get; set; }
 
+
+        private int fireAtOnce { get; set; } = 3;
+        private int fireCounter { get; set; }
+        private float canAttackTime { get; set; } = 0.4f;
+        private int ultGage { get; set; } = 0;
 
         // 좌, 우 UI 사이즈
         private float leftMargin;
         private float rightMargin;
 
-        //private int level;
-        //private int hp;
-        private int poolIndex = 0;
+        public int poolIndex { get; set; } = 0;
         private Vector2 inputDir;
-        //private bool isAttack;
 
-        private ObjectPool curBulletPool => bulletPools[poolIndex];
+        private bool isAttack;
+
+        private float parryTimer { get; set; } = 0;
+        private float attackInputTimer;
+
+        public ObjectPool curBulletPool => bulletPools[poolIndex];
+        private Coroutine fireRoutine;
+
         private void Awake()
         {
             Init();
         }
         private void OnEnable()
         {
-            //CreatePlayer();
             rig = GetComponent<Rigidbody>();
             SubscribeEvents();
         }
         private void Update()
         {
             PlayerHandler();
+            if (attackInputTimer > 0)
+            {
+                attackInputTimer -= Time.deltaTime;
+            }
+            if (parryTimer > 0)
+            {
+                parryTimer -= Time.deltaTime;
+            }
+            if (hp<=0)
+            {
+                // TODO: 게임오버
+            }
         }
 
-        private void FixedUpdate()
-        {
+        private void FixedUpdate() { }
 
-        }
+        private void LateUpdate() { }
 
-        private void LateUpdate()
-        {
-            // 애니메이션 - 궁극기 등
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            // 적 총알에 맞으면 피격
-        }
         private void OnDisable()
         {
             UnSubscribeEvents();
         }
-
-        //private void CreatePlayer()
-        //{
-        //   플레이어 생성 - 게임매니저의 파티조합을 가져옴. 
-        //   Instantiate(character[0].prefab, transform); -> 캐릭터 컨트롤러에 있는 프리팹을 통해 캐릭터 생성
-        //   
-        //}
         private void Init()
         {
+            animator = GetComponent<Animator>();
             playerInput = GetComponent<PlayerInput>();
             charDataLoader = GetComponent<CharacterSaveLoader>();
             charDataLoader.GetCharPrefab();
-            foreach(var charData in charDataLoader.charactorController)
+            foreach (var charData in charDataLoader.charactorController)
             {
-                switch(charData.partySet)
+                switch (charData.partySet)
                 {
                     case PartySet.Main:
-                    mainCharController = charData;
+                        mainCharController = charData;
                         break;
                     case PartySet.Sub1:
-
+                        sub1CharController = charData;
                         break;
                     case PartySet.Sub2:
+                        sub2CharController = charData;
                         break;
                 }
             }
+
+            bulletPools[0].poolObject = mainCharController.bulletPrefab;
+            bulletPools[0].ClearPool();
+            bulletPools[0].CreatePool();
+            bulletPools[1].poolObject = mainCharController.ultBulletPrefab;
+            bulletPools[1].ClearPool();
+            bulletPools[1].CreatePool();
+
+            // Input System 설정
             attackAction = playerInput.actions["Attack"];
+            ultAction = playerInput.actions["Ult"];
+            parryAction1 = playerInput.actions["Parry1"];
+            parryAction2 = playerInput.actions["Parry2"];
 
-            // parryAction1 = playerInput.actions["parry1"];
-            // parryAction2 = playerInput.actions["parry2"];
-            // ultAction = playerInput.actions["Ult"];
-            // menuAction = playerInput.actions["menu"];
-
-            // TODO: UI 시스템 구축 후, UI Manager에서 참조하는 식으로 변경
-            if(leftUI!= null)
+            if (leftUI != null)
             {
-                leftMargin = leftUI.rect.width/Camera.main.pixelWidth;
+                leftMargin = leftUI.rect.width / Camera.main.pixelWidth;
             }
             else
             {
@@ -130,7 +142,7 @@ namespace JYL
             }
             if (rightUI != null)
             {
-                rightMargin = 1- rightUI.rect.width/Camera.main.pixelWidth;
+                rightMargin = 1 - rightUI.rect.width / Camera.main.pixelWidth;
             }
             else
             {
@@ -141,43 +153,19 @@ namespace JYL
             CharacterParameterSetting();
 
         }
-            // 캐릭터 필드 세팅
+        // 캐릭터 필드 세팅
         private void CharacterParameterSetting()
         {
-            //mainCharController.
+            //mainCharController.model 생성
+            hp = mainCharController.Hp;
             attackPower = mainCharController.attackDamage;
-        }
-            // 캐릭터 필드 세팅
-        private void CharacterParameterSetting()
-        {
-            //mainCharController.
-        }
-        private void SubscribeEvents()
-        {
-            attackAction.started += Fire;
-        }
-        private void UnSubscribeEvents()
-        {
-            attackAction.started -= Fire;
+            attackSpeed = mainCharController.attackSpeed;
+            moveSpeed = mainCharController.moveSpeed;
         }
 
         private void PlayerHandler()
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                poolIndex = 0;
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                poolIndex = 1;
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                poolIndex = 2;
-            }
             SetMove();
-            //UseUlt
-            //Parry
         }
 
         private void SetMove()
@@ -189,7 +177,7 @@ namespace JYL
                 return;
             }
             Vector3 moveDir = new Vector3(clampInput.x, 0f, clampInput.y);
-            rig.velocity = moveDir * playerModel.playerSpeed;
+            rig.velocity = moveDir * moveSpeed;
         }
 
         private Vector2 ClampMoveInput(Vector2 inputDirection)
@@ -198,7 +186,6 @@ namespace JYL
             {
                 return Vector2.zero;
             }
-
             // 카메라 기준 스크린 좌표로 판단
             //Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
 
@@ -214,7 +201,7 @@ namespace JYL
             // 뷰포트는 0~1사이의 값으로만 정해져 있다. 매우 정확하게 떨어지진 않겠지만, 어느정도 커버가 된다
 
             Vector3 viewportPos = Camera.main.WorldToViewportPoint(transform.position);
-            if(viewportPos.z<=0) return Vector2.zero;
+            if (viewportPos.z <= 0) return Vector2.zero;
 
             if (viewportPos.x <= leftMargin && inputDirection.x < 0) inputDirection.x = 0;
             if (viewportPos.x >= rightMargin && inputDirection.x > 0) inputDirection.x = 0;
@@ -232,34 +219,113 @@ namespace JYL
 
         private void Fire(InputAction.CallbackContext ctx)
         {
-            BulletPrefabController bulletPrefab = curBulletPool.ObjectOut() as BulletPrefabController;
-            bulletPrefab.transform.position = muzzlePoint.position;
-            bulletPrefab.ReturnToPool(bulletReturnTimer);
-            foreach (BulletInfo info in bulletPrefab.bulletInfo)
+            if (fireCounter <= fireAtOnce && fireCounter > 0 && 0.5f * canAttackTime > attackInputTimer && attackInputTimer > 0)
             {
-                if (info.rig == null)
+                fireCounter += fireAtOnce;
+                isAttack = true;
+                attackInputTimer = canAttackTime;
+            }
+            else if (fireCounter <= 0)
+            {
+                fireCounter = fireAtOnce;
+                attackInputTimer = canAttackTime;
+            }
+
+            if (fireCounter > 0 && fireRoutine == null)
+            {
+                fireRoutine = StartCoroutine(FireRoutine());
+            }
+
+        }
+        IEnumerator FireRoutine()
+        {
+            while (fireCounter > 1)
+            {
+                fireCounter--;
+                BulletPrefabController bulletPrefab = curBulletPool.ObjectOut() as BulletPrefabController;
+                bulletPrefab.transform.position = muzzlePoint.position;
+                bulletPrefab.ReturnToPool(bulletReturnTimer);
+                foreach (BulletInfo info in bulletPrefab.bulletInfo)
                 {
-                    continue;
+                    if (info.rig == null)
+                    {
+                        continue;
+                    }
+                    info.trans.gameObject.SetActive(true);
+                    info.trans.localPosition = info.originPos;
+                    info.rig.velocity = Vector3.zero;
+                    if(poolIndex == 0)
+                    {
+                        info.bulletController.attackPower = this.attackPower;
+                    }
+                    else if(poolIndex == 1)
+                    {
+                        info.bulletController.attackPower = (int)mainCharController.ultDamage;
+                        info.bulletController.canDeactive = false;
+                    }
+                    info.rig.AddForce(playerModel.fireSpeed * info.trans.forward, ForceMode.Impulse); // 이 부분을 커스텀하면 됨
                 }
-                info.trans.gameObject.SetActive(true);
-                info.trans.localPosition = info.originPos;
-                info.rig.velocity = Vector3.zero;
-                info.bulletController.attackPower = this.attackPower;
-                info.rig.AddForce(playerModel.fireSpeed * info.trans.forward, ForceMode.Impulse); // 이 부분을 커스텀하면 됨
+                yield return new WaitForSeconds(attackSpeed);
+            }
+            if (isAttack)
+            {
+                isAttack = false;
+            }
+            StopCoroutine(fireRoutine);
+            fireRoutine = null;
+        }
+
+        private void TakeDamage(int damage)
+        {
+            if(mainCharController.defense>0)
+            {
+                mainCharController.defense -= 1;
+                return;
+            }
+            if(mainCharController.defense <=0)
+            {
+                hp-=damage;
             }
         }
-        //private void UseUlt()
-        //{
-        //  궁극기 -  입력을 통해 들어옴
-        //  if(ultGage>=100)
-        //  character[0].Ult();
-        //}
 
-        //private void Parry(int index)
-        //{
-        //  들어온 캐릭터에 따른 패링스킬 사용
-        //  character[index].Parry();
-        //}
+        private void UseUlt(InputAction.CallbackContext ctx)
+        {
+            if (ultGage >= 100)
+            {
+                mainCharController.UseUlt();
+                ultGage = 0;
+            }
+        }
+        private void UseParry1(InputAction.CallbackContext ctx)
+        {
+            if (parryTimer <= 0)
+            {
+                sub1CharController.UseParry();
+                parryTimer = sub1CharController.parryCool;
+            }
+        }
+        private void UseParry2(InputAction.CallbackContext ctx)
+        {
+            if (parryTimer <= 0)
+            {
+                sub2CharController.UseParry();
+                parryTimer = sub2CharController.parryCool;
+            }
+        }
+        private void SubscribeEvents()
+        {
+            attackAction.started += Fire;
+            ultAction.started += UseUlt;
+            parryAction1.started += UseParry1;
+            parryAction2.started += UseParry2;
+        }
+        private void UnSubscribeEvents()
+        {
+            attackAction.started -= Fire;
+            ultAction.started -= UseUlt;
+            parryAction1.started -= UseParry1;
+            parryAction2.started -= UseParry2;
+        }
     }
 }
 

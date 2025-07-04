@@ -43,7 +43,7 @@ public class EnemyItem : MonoBehaviour
     }
     void Collect()
     {
-        ScoreManager.Instance.AddScore(1);
+        // ScoreManager.Instance.AddScore(1);
         Debug.Log($"{ScoreManager.Instance.Score}");
         Destroy(gameObject);
     }

@@ -22,8 +22,7 @@ namespace IO
 
         public static void Read(Csv csv)
         {
-            if (!IsValidPath(csv) ||
-                !IsValidEmpty(csv, out string[] lines))
+            if (!TryLoadLines(csv, out string[] lines))
                 return;
 
             bool isReadSuccessful;
@@ -39,7 +38,7 @@ namespace IO
             PrintResult(csv, isReadSuccessful);
         }
 
-        private static bool ReadToTable(CsvTable csv, string[] lines)
+        public static bool ReadToTable(CsvTable csv, string[] lines)
         {
             string[] firstLineFields = lines[0].Split(csv.SplitSymbol);
             int rows = lines.Length;
@@ -89,6 +88,51 @@ namespace IO
             }
             return true;
         }
+
+        /// <summary>
+        /// 환경에 따라 (Editor: File, Build: Resources) CSV 데이터를 읽어옴
+        /// </summary>
+        private static bool TryLoadLines(Csv csv, out string[] lines)
+        {
+            lines = null;
+
+#if UNITY_EDITOR
+            // 에디터에서는 실제 파일 경로에서 읽기
+            if (!File.Exists(csv.FilePath))
+            {
+                Debug.LogError($"[CsvReader] File not found at: {csv.FilePath}");
+                return false;
+            }
+
+            lines = File.ReadAllLines(csv.FilePath);
+
+            if (lines.Length == 0)
+            {
+                Debug.LogError($"[CsvReader] CSV file is empty: {csv.FilePath}");
+                return false;
+            }
+#else
+            TextAsset textAsset;
+            // 빌드 환경에서는 Resources.Load 사용
+            textAsset = Resources.Load<TextAsset>(csv.ResourcePath);
+            if (textAsset == null)
+            {
+                Debug.LogError($"[CsvReader] Resource not found: Resources/{csv.ResourcePath}");
+                return false;
+            }
+
+            lines = textAsset.text.Split(new[] { "\r\n", "\n" }, System.StringSplitOptions.None);
+
+            if (lines.Length == 0)
+            {
+                Debug.LogError($"[CsvReader] CSV resource is empty: {csv.ResourcePath}");
+                return false;
+            }
+#endif
+
+            return true;
+        }
+
 
         private static void PrintResult(Csv csv, bool result)
         {

@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnPool: {fileID: 0}
+  objectPool: {fileID: 0}
 --- !u!1 &5576881101822252456
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,4 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c232919127a25b54b842d8bb6a7c7017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ticTime: 0.5
+  destroyParticle: {fileID: 0}
   rig: {fileID: 0}
+  attackPower: 90
+  canDeactive: 1

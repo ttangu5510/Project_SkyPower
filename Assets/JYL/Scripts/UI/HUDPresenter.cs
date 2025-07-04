@@ -55,9 +55,7 @@ namespace JYL
         void Start()
         {
             // TODO: 여기서 이미지들 채워넣음.
-            ultGage = 0;
-            parryImg.gameObject.SetActive(false);
-            ultImg.gameObject.SetActive(false);
+
         }
         private void OnEnable()
         {
@@ -127,10 +125,20 @@ namespace JYL
         }
         private void Init()
         {
+
             maxHp = 100;
             CurHp = 56;
             hpBar.value = (float)curHp / maxHp;
+            parryImg.sprite = parry1Sprite;
+            ultImg.sprite = ultSprite;
+            parryImg.sprite = parry2Sprite;
+
+            ultGage = 0;
+            parryImg.gameObject.SetActive(false);
+            ultImg.gameObject.SetActive(false);
+
             SubscribeEvents();
+
         }
         private void OnHpChanged()
         {
@@ -162,19 +170,17 @@ namespace JYL
         {
             UltGage = 0;
             ultImg.gameObject.SetActive(true);
-            ultImg.sprite = ultSprite;
             ultAnimator.Play("ActivateSkill");
         }
         IEnumerator Parry1Routine()
         {
             parryImg.gameObject.SetActive(true);
-            parryImg.sprite = parry1Sprite;
             parry1Img.fillAmount = 0;
             float timer = 0;
             parryAnimator.Play("ActiveParry");
             while (true)
             {
-                if (timer >= parry1Cooltime)
+                if (timer > parry1Cooltime)
                 {
                     timer = 0;
                     StopCoroutine(parry1CooldownRoutine);
@@ -194,13 +200,12 @@ namespace JYL
         IEnumerator Parry2Routine()
         {
             parryImg.gameObject.SetActive(true);
-            parryImg.sprite = parry2Sprite;
             parry2Img.fillAmount = 0;
             float timer = 0;
             parryAnimator.Play("ActiveParry");
             while (true)
             {
-                if (timer >= parry2Cooltime)
+                if (timer > parry2Cooltime)
                 {
                     timer = 0;
                     StopCoroutine(parry2CooldownRoutine);

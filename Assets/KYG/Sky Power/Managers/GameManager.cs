@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using LJ2;
 using IO;
-
+using JYL;
 
 namespace KYG_skyPower
 {
@@ -95,8 +95,10 @@ namespace KYG_skyPower
         {
             if (isGameCleared || isGameOver) return;
             isGameCleared = true;
-            Time.timeScale = 0f;
+            Time.timeScale = 1f;
             onGameClear?.Invoke();
+            UIManager.Instance.ShowPopUp<StageClearPopUp>();
+            
             Debug.Log("게임 클리어");
         }
 

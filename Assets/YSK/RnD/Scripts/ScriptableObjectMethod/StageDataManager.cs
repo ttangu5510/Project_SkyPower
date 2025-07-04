@@ -59,7 +59,7 @@ namespace YSK
 
         public void SyncRuntimeDataWithStageInfo()
         {
-            GameData saveData = Manager.Game.saveFiles[Manager.Game.currentSaveIndex];
+            GameData saveData = Manager.Game.CurrentSave;
             for (int i = 0; i < saveData.stageInfo.Length; i++)
             {
                 if(i>Manager.SDM.runtimeData.Count*5-1)

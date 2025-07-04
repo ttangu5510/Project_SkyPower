@@ -12,8 +12,8 @@ namespace JYL
         
         void Start()
         {
-            data = Manager.Game.saveFiles[Manager.Game.currentSaveIndex];
-            GetUI<TMP_Text>("SaveFileData").text = $"{Manager.Game.saveFiles[Manager.Game.currentSaveIndex].playerName}";
+            data = Manager.Game.CurrentSave;
+            GetUI<TMP_Text>("SaveFileData").text = $"{Manager.Game.CurrentSave.playerName}";
             GetEvent("SaveDelBtn").Click += OnDelClick;
             GetEvent("SaveStartBtn").Click += OnStartClick;
         }

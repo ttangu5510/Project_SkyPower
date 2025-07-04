@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using LJ2;
 using TMPro;
 
 namespace JYL
@@ -15,22 +16,27 @@ namespace JYL
         private TMP_Text level => GetUI<TMP_Text>("InvenCharLevelText");
         private TMP_Text hp => GetUI<TMP_Text>("InvenCharHPText");
         private TMP_Text ap => GetUI<TMP_Text>("InvenCharAPText");
-        // TODO: GameManager.CharacterController[] character => for(int i = 0;i<character.Length;i++) { 인벤토리에 UI추가 }
-        
-        // private Item[] items;
+        private Image charImage;
+        private CharacterSaveLoader characterLoader;
 
-
+        private void OnEnable()
+        {
+        }
         void Start()
         {
+            
             // 장비 클릭시 활성화
+            characterLoader = GetComponent<CharacterSaveLoader>();
+            characterLoader.GetCharPrefab();
+            Init();
+
             invenScroll.SetActive(false);
+            GetEvent("CharEnhanceBtn1").Click += OpenCharEnhance;
             GetEvent("WeaponBtn").Click += OpenWPInven;
-            GetEvent("WPEnhanceBtn1").Click += OpenWPEnhance;
+            GetEvent("WPEnhanceBtn2").Click += OpenWPEnhance;
             GetEvent("ArmorBtn").Click += OpenAMInven;
-            GetEvent("AMEnhanceBtn2").Click += OpenAMEnhance;
+            GetEvent("AMEnhanceBtn3").Click += OpenAMEnhance;
             GetEvent("AccessoryBtn").Click += OpenACInven;
-            GetEvent("ACEnhanceBtn3").Click += OpenACEnhance;
-            GetEvent("CharEnhanceBtn").Click += OpenCharEnhance;
 
             // 현재 캐릭터의 정보가 표시된다
             // index는 UIManager가 관리
@@ -39,6 +45,47 @@ namespace JYL
             level.text = "24";
             hp.text = "2040";
             ap.text = "332";
+            Init();
+        }
+        private void Init()
+        {
+            charImage = GetUI<Image>("InvenCharImage");
+            CharactorController charCont;
+            foreach(CharactorController cont in characterLoader.charactorController)
+            {
+                if(cont.partySet == PartySet.Main)
+                {
+                    charCont = cont;
+                    charImage.sprite = charCont.image;
+                }
+            }
+        }
+        private void OpenCharEnhance(PointerEventData eventData)
+        {
+            // 캐릭터 정보를 가지고 강화창 구현
+            // UIManager에서 선택된 캐릭터의 인덱스 가지고 GameManager의 파티 구성원의 정보에 대한 캐릭터 컨트롤러 정보 불러옴
+            // 해당 정보는 강화창에서 불러옴 여기서 안불러옴
+            UIManager.Instance.selectIndexUI = 1;
+            UIManager.Instance.ShowPopUp<EnhancePopUp>();
+            // UI 생성할 때, UI에다가 이벤트 다세요.
+            // Image img = Instantiate();
+            // GetEvent($"img.gameObject.name").Click += 이벤트함수;
+        }
+
+        private void OpenWPEnhance(PointerEventData eventData)
+        {
+            UIManager.Instance.selectIndexUI = 2;
+            // 현재 무기의 정보를 가져가야함
+            // 선택하는 UI 정보들은 UIManager를 통해 접근한다.
+            // GameManager.Instance.Party[0].
+            // UIManager.Instance. 현재 선택한 캐릭의정보 + 무기 -> Enhance 팝업이 불러와야 함
+            UIManager.Instance.ShowPopUp<EnhancePopUp>();
+        }
+
+        private void OpenAMEnhance(PointerEventData eventData)
+        {
+            UIManager.Instance.selectIndexUI = 3;
+            UIManager.Instance.ShowPopUp<EnhancePopUp>();
         }
 
         private void OpenWPInven(PointerEventData eventData)
@@ -58,38 +105,13 @@ namespace JYL
         // 아이템 교체 함수
         // 캐릭터 컨트롤러에 장비중인 아이템의 ID값 변경 필요
 
-        private void OpenWPEnhance(PointerEventData eventData)
-        {
-            // 현재 무기의 정보를 가져가야함
-            // 선택하는 UI 정보들은 UIManager를 통해 접근한다.
-            // GameManager.Instance.Party[0].
-            // UIManager.Instance. 현재 선택한 캐릭의정보 + 무기 -> Enhance 팝업이 불러와야 함
-            UIManager.Instance.ShowPopUp<EnhancePopUp>();
-        }
         private void OpenAMInven(PointerEventData eventData)
         {
             invenScroll.SetActive(true);
         }
-
-        private void OpenAMEnhance(PointerEventData eventData)
-        {
-            UIManager.Instance.ShowPopUp<EnhancePopUp>();
-        }
         private void OpenACInven(PointerEventData eventData)
         {
             invenScroll.SetActive(true);
-        }
-
-        private void OpenACEnhance(PointerEventData eventData)
-        {
-            UIManager.Instance.ShowPopUp<EnhancePopUp>();
-        }
-        private void OpenCharEnhance(PointerEventData eventData)
-        {
-            // 캐릭터 정보를 가지고 강화창 구현
-            // UIManager에서 선택된 캐릭터의 인덱스 가지고 GameManager의 파티 구성원의 정보에 대한 캐릭터 컨트롤러 정보 불러옴
-            // 해당 정보는 강화창에서 불러옴 여기서 안불러옴
-            UIManager.Instance.ShowPopUp<EnhancePopUp>();
         }
     }
 }

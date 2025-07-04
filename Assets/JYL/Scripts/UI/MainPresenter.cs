@@ -6,32 +6,32 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using LJ2;
+using TMPro;
+using KYG_skyPower;
 
 namespace JYL
 {
     public class MainPresenter : BaseUI
     {
-        private GameObject mainScreen;
         private Image charImg1;
         private Image charImg2;
         private Image charImg3;
         private event Action onEnterMain;
         private CharacterSaveLoader characterLoader;
+        private TMP_Text unitText;
         void Start()
         {
             characterLoader = GetComponent<CharacterSaveLoader>();
             characterLoader.GetCharPrefab();
-
-            mainScreen = GetUI("MainScreen");
+            unitText = GetUI<TMP_Text>("UnitText");
             charImg1 = GetUI<Image>("CharImage1");
             charImg2 = GetUI<Image>("CharImage2");
             charImg3 = GetUI<Image>("CharImage3");
             SetPartyImage();
-
             GetEvent("ShopBtn").Click += OpenShop;
             GetEvent("PartySetBtn").Click += OpenPartySetting;
             GetEvent("PlayBtn").Click += OpenGameMode;
-
+            unitText.text = $"{Manager.Game.CurrentSave.gold} UNIT";
             // GetEvent("InfoBtn").Click += OpenGameInfo;
         }
         private void LateUpdate()
@@ -90,6 +90,10 @@ namespace JYL
                     onEnterMain -= SetPartyImage;
                 }
             }
+        }
+        private void UpdateUnitText()
+        {
+            unitText.text = $"{Manager.Game.CurrentSave.gold} UNIT";
         }
     }
 }

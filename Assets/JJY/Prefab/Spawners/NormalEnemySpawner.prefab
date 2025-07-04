@@ -44,13 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a40bf57aca5394fa3fbb729dce2433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint:
-  - {x: 8.59, y: 3, z: 7.1}
-  - {x: -5.98, y: 3, z: 4.25}
-  - {x: 5.4, y: 3, z: -3.63}
-  - {x: -1.29, y: 3, z: -8.5}
-  enemyPrefabs:
-  - {fileID: 4344951356574126065, guid: 74b27bd8be43ee24f9d325672cef2cd9, type: 3}
-  - {fileID: 4344951356574126065, guid: 74b27bd8be43ee24f9d325672cef2cd9, type: 3}
-  spawnDelay: 3
-  objectPool: {fileID: 0}
+  objectPools: []

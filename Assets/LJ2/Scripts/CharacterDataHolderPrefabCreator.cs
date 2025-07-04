@@ -6,6 +6,9 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class CharacterDataHolderPrefabCreator
 {
+#if UNITY_EDITOR
+
+
     [MenuItem("Tools/CharacterDataHolder 프리팹 자동생성")]
     public static void CreatePrefabsForAllCharacterData()
     {
@@ -39,10 +42,12 @@ public class CharacterDataHolderPrefabCreator
             ultimate.ultLaser = laserPrefab; // Laser 프리팹 연결
             ultimate.shield = shieldPrefab; // Shield 프리팹 연결
 
+            var characterModel = (GameObject)PrefabUtility.InstantiatePrefab(data.characterModel);
             var eraseObject = (GameObject)PrefabUtility.InstantiatePrefab(erasePrefab);
             var laserObject = (GameObject)PrefabUtility.InstantiatePrefab(laserPrefab);
             var shieldObject = (GameObject)PrefabUtility.InstantiatePrefab(shieldPrefab);
 
+            characterModel.transform.SetParent(go.transform); // CharacterModel 프리팹을 생성된 GameObject의 자식으로 설정
             eraseObject.transform.SetParent(go.transform); // Erase 프리팹을 생성된 GameObject의 자식으로 설정
             laserObject.transform.SetParent(go.transform); // Laser 프리팹을 생성된 GameObject의 자식으로 설정
             shieldObject.transform.SetParent(go.transform); // Shield 프리팹을 생성된 GameObject의 자식으로 설정
@@ -54,4 +59,7 @@ public class CharacterDataHolderPrefabCreator
 
         Debug.Log("각 CharacterData별로 CharacterDataHolder 프리팹 자동생성 완료");
     }
+    #endif
+
+
 }
