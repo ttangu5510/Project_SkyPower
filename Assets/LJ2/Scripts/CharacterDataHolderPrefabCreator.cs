@@ -19,10 +19,10 @@ public class CharacterDataHolderPrefabCreator
         if (!AssetDatabase.IsValidFolder(saveDir))
             AssetDatabase.CreateFolder("Assets/LJ2/Prefabs", "CharacterDataHolders");
 
-        var erasePrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LJ2/Prefabs/Erase.Prefab");
-        var laserPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LJ2/Prefabs/Laser.Prefab");
-        var shieldPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LJ2/Prefabs/Shield.Prefab");
-        var firePrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/LJ2/Prefabs/Fire.Prefab");
+        var erasePrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Resources/Prefabs/Bullet/UltBullet/Erase.Prefab");
+        var laserPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Resources/Prefabs/Bullet/UltBullet/Laser.Prefab");
+        var shieldPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Resources/Prefabs/Bullet/UltBullet/Shield.Prefab");
+        var firePrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Resources/Prefabs/Bullet/UltBullet/Fire.Prefab");
 
         foreach (var guid in guids)
         {
