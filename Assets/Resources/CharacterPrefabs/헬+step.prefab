@@ -69,7 +69,7 @@ MonoBehaviour:
   ultLevel: 0
   ultDamage: 0
   ultCool: 0
-  bulletPrefab: {fileID: -8925344517752099376, guid: dfefc1b39730eba448201b41a04a19aa,
+  bulletPrefab: {fileID: -1307198302941731247, guid: 229fdeb879473354991c8060b92b5701,
     type: 3}
   ultBulletPrefab: {fileID: 0}
   ultPrefab: {fileID: 0}
@@ -113,7 +113,7 @@ MonoBehaviour:
   setUltDelay: 0
   playerController: {fileID: 0}
   bulletReturnTimer: 5
-  bulletSpeed: 10
+  bulletSpeed: 3
   ultBulletTime: 3
   bulletUpgradeTime: 5
   enemyBullet:

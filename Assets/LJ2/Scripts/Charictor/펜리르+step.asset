@@ -21,7 +21,7 @@ MonoBehaviour:
   maxLevel: 30
   hp: 201
   hpPlus: 10
-  bulletPrefab: {fileID: 1253354654402752, guid: 0e981ec23c55a3040af9c39571670efc,
+  bulletPrefab: {fileID: 2680888267476311631, guid: 3da0ab05755977e43bd363f39812aff0,
     type: 3}
   attackDamage: 30
   damagePlus: 10
@@ -30,7 +30,6 @@ MonoBehaviour:
   defense: 2
   ultCoolDefault: 80
   ultCoolReduce: 10
-  ultLore: 
   ultVisual: {fileID: 0}
   parry: 1
   parryCool: 3
