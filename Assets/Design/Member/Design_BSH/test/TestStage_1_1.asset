@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea4c279c15f030438294df52bb78cf9, type: 3}
+  m_Name: TestStage_1_1
+  m_EditorClassIdentifier: 
+  sequence:
+  - enemyPrefab:
+    - {fileID: 4344951356574126065, guid: 4484801bba230f7468d100febd2b0ab6, type: 3}
+    - {fileID: 4344951356574126065, guid: 61868cd4578d3844cb8a027272aea103, type: 3}
+    - {fileID: 4344951356574126065, guid: 4484801bba230f7468d100febd2b0ab6, type: 3}
+    - {fileID: 4344951356574126065, guid: 61868cd4578d3844cb8a027272aea103, type: 3}
+    - {fileID: 4344951356574126065, guid: 4484801bba230f7468d100febd2b0ab6, type: 3}
+    - {fileID: 4344951356574126065, guid: d260e66bb4582c24a825f94953cc58d1, type: 3}
+    - {fileID: 4344951356574126065, guid: e05abc4d9b2302245b36aed7f223a4f5, type: 3}
+    - {fileID: 4344951356574126065, guid: 6e47ae2c913028445bb95ef7a071d46b, type: 3}
+    - {fileID: 4344951356574126065, guid: e64059a4a396c084bbd70d9d61de0459, type: 3}
+    - {fileID: 4344951356574126065, guid: 6e47ae2c913028445bb95ef7a071d46b, type: 3}
+    spawnPos:
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    spawnDelay: 1
+  - enemyPrefab: []
+    spawnPos: []
+    spawnDelay: 1
+  bossPrefab: {fileID: 0}
+  bossSpawnPos: {x: 0, y: 0, z: 0}

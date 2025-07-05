@@ -40,7 +40,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 270, y: 50, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 540, y: 200, z: 0}
+  m_ExitPosition: {x: 540, y: 140, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1229674075234349040}
 --- !u!91 &9100000
@@ -49,7 +49,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pat02
+  m_Name: Pat12
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: IsDead
@@ -91,7 +91,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 08b1de4a2a624334ba5316382554afb5, type: 2}
+  m_Motion: {fileID: 7400000, guid: aa2a6e120afcedd48b5a9ee96a888eb2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
