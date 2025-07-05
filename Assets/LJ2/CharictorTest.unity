@@ -1206,7 +1206,7 @@ PrefabInstance:
     - target: {fileID: 8922811755652027464, guid: 18bcacf2318602645bf13f25a8e8b11e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

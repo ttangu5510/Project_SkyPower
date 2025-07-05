@@ -113,7 +113,7 @@ MonoBehaviour:
   setUltDelay: 0
   playerController: {fileID: 0}
   bulletReturnTimer: 5
-  bulletSpeed: 10
+  bulletSpeed: 3
   ultBulletTime: 3
   bulletUpgradeTime: 5
   enemyBullet:
