@@ -125,6 +125,11 @@ namespace KYG_skyPower
             selectWorldIndex = 0;
             selectStageIndex = 0;
         }
+
+        public void SaveGameProgress()
+        {
+            Manager.Save.GameSave(CurrentSave, currentSaveIndex);
+        }
         /*private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))

@@ -28,10 +28,13 @@ namespace LJ2
         //}
 
         // 현재 partial class로 구현된 GameData를 control하는 함수들
-        public void GameSave(GameData target, int index, string name)
+        
+        public void GameSave(GameData target, int index, string name = "")
         {
-            
-            target.playerName = name;
+            if(name != "")
+            {
+                target.playerName = name;
+            }
             GameData saveTargetData = SaveStageInfo(target);
             DataSaveController.Save(saveTargetData, index);
         }

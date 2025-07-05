@@ -36,7 +36,6 @@ namespace JYL
         void Start()
         {
              // TODO : 상점 연결
-            characterLoader = GetComponent<CharacterSaveLoader>();
             GetEvent("PSCharImg1").Click += OpenInvenPopUp;
             //GetEvent("PSCharImg2").Click += OpenInvenPopUp;
             //GetEvent("PSCharImg3").Click += OpenInvenPopUp;
@@ -77,10 +76,10 @@ namespace JYL
         // 초기화
         private void Init()
         {
+            characterLoader = GetComponent<CharacterSaveLoader>();
             charDict = new Dictionary<string, CharactorController>();
             charDataList = Manager.Game.CurrentSave.characterInventory.characters;
             iconList = new List<GameObject>();
-            characterLoader = GetComponent<CharacterSaveLoader>();
             //canvasGroup = GetComponent<CanvasGroup>();
             mainIllustImg = GetUI<Image>("PSCharImg1");
             sub1IllustImg = GetUI<Image>("PSCharImg2");
@@ -276,7 +275,7 @@ namespace JYL
                                 int mainCharIndex = charDataList.FindIndex(c => c.partySet == PartySet.Main);
                                 if (mainCharIndex == -1)
                                 {
-                                    Debug.Log($"메인 캐릭터는 현재 비어있음");
+                                    Debug.Log($"메인 캐릭터는 비어있었음");
                                 }
                                 else
                                 {
@@ -293,7 +292,7 @@ namespace JYL
                                 int sub1CharIndex = charDataList.FindIndex(c => c.partySet == PartySet.Sub1);
                                 if (sub1CharIndex == -1)
                                 {
-                                    Debug.Log($"서브1 캐릭터는 현재 비어있음");
+                                    Debug.Log($"서브1 캐릭터는 비어있었음");
                                 }
                                 else
                                 {
@@ -309,7 +308,7 @@ namespace JYL
                                 int sub2CharIndex = charDataList.FindIndex(c => c.partySet == PartySet.Sub2);
                                 if (sub2CharIndex == -1)
                                 {
-                                    Debug.Log($"서브2 캐릭터는 현재 비어있음");
+                                    Debug.Log($"서브2 캐릭터는 비어있었음");
                                 }
                                 else
                                 {

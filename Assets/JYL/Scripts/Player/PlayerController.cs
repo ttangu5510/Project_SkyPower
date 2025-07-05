@@ -20,7 +20,6 @@ namespace JYL
         [SerializeField] RectTransform leftUI;
         [SerializeField] RectTransform rightUI;
         [SerializeField] Animator animator;
-        // TODO : UI 시스템 구축 후, 시스템에서 불러오는 식으로 참조 시킨다
 
 
         [Header("Set Value")]
@@ -114,27 +113,17 @@ namespace JYL
             playerInput = GetComponent<PlayerInput>();
             charDataLoader = GetComponent<CharacterSaveLoader>();
             charDataLoader.GetCharPrefab();
-            foreach (var charData in charDataLoader.charactorController)
+           
+            mainCharController = charDataLoader.mainController;
+            if(charDataLoader.sub1Controller.grade != Grade.R)
             {
-                switch (charData.partySet)
-                {
-                    case PartySet.Main:
-                        mainCharController = charData;
-                        break;
-                    case PartySet.Sub1:
-                        if(charData.grade != Grade.R)
-                        {
-                            sub1CharController = charData;
-                        }
-                        break;
-                    case PartySet.Sub2:
-                        if(charData.grade != Grade.R)
-                        {
-                            sub2CharController = charData;
-                        }
-                        break;
-                }
+                sub1CharController = charDataLoader.sub1Controller;
             }
+            if(charDataLoader.sub1Controller.grade != Grade.R)
+            {
+                sub2CharController = charDataLoader.sub2Controller;
+            }
+            
             // 오브젝트 풀 설정
             bulletPools[0].poolObject = mainCharController.bulletPrefab;
             bulletPools[0].ClearPool();

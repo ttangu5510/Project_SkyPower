@@ -58,21 +58,9 @@ namespace JYL
         //}
         private void SetPartyImage()
         {
-            foreach (CharactorController character in characterLoader.charactorController)
-            {
-                switch (character.partySet)
-                {
-                    case PartySet.Main:
-                        charImg1.sprite = character.image;
-                        break;
-                    case PartySet.Sub1:
-                        charImg2.sprite = character.image;
-                        break;
-                    case PartySet.Sub2:
-                        charImg3.sprite = character.image;
-                        break;
-                }
-            }
+            charImg1.sprite = characterLoader.mainController.image;
+            charImg2.sprite = characterLoader.sub1Controller.image;
+            charImg3.sprite = characterLoader.sub2Controller.image;
         }
         private void CheckPopUp()
         {

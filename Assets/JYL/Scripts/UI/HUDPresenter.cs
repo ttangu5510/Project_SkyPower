@@ -1,13 +1,18 @@
+using KYG_skyPower;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
-using KYG_skyPower;
-
 namespace JYL
 {
     public class HUDPresenter : BaseUI
     {
         [SerializeField] PlayerController player;
+        [SerializeField] private Sprite ultSprite;
+        [SerializeField] private Sprite parry1Sprite;
+        [SerializeField] private Sprite parry2Sprite;
+        public UnityEvent<int> onSeqChanged;
+
         private int maxHp { get; set; } // 플레이어 컨트롤러에서 체력 가져옴
 
         private int curHp;
@@ -32,8 +37,9 @@ namespace JYL
             }
         }
         private float parryCooltime = 2f;
-        private float progressTime = 10f;
-        private float pgTimer = 0;
+        private int maxSeq { get; set; }
+        public int curSeq { get; set; }
+
 
         private Slider hpBar => GetUI<Slider>("HPBar");
         private Slider pgBar => GetUI<Slider>("ProgressBar");
@@ -50,12 +56,10 @@ namespace JYL
         private Animator ultAnimator => GetUI<Animator>("UltImg");
         private Animator parryAnimator => GetUI<Animator>("ParryImg");
 
-        [SerializeField] private Sprite ultSprite;
-        [SerializeField] private Sprite parry1Sprite;
-        [SerializeField] private Sprite parry2Sprite;
 
         private Coroutine parry1CooldownRoutine;
         private Coroutine parry2CooldownRoutine;
+
         void Start()
         {
             // TODO: 여기서 이미지들 채워넣음.
@@ -65,40 +69,41 @@ namespace JYL
         {
             Init();
         }
-        //private void OnDisable()
-        //{
-        //    UnSubscribeEvent();
-        //}
+        private void OnDisable()
+        {
+            onSeqChanged.RemoveListener(SetProgressBar);
+        }
 
         void Update()
         {
             // TODO :  체력바 테스트. 플레이어 피격시 amount만큼 깎임. 플레이어 컨트롤러에서 이벤트 걸수도 있음.
             // 이후, 플레이어 컨트롤러에서 이벤트로 해당 기능들을 연결한다
-            if(Input.GetKey(KeyCode.Space))
-            {
-                UltGage += Time.deltaTime;
-                if(UltGage>1)
-                {
-                    UseUltimate();
-                }
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                if (parry1CooldownRoutine == null)
-                {
+            //if (Input.GetKey(KeyCode.Space))
+            //{
+            //    UltGage += Time.deltaTime;
+            //    if (UltGage > 1)
+            //    {
+            //        UseUltimate();
+            //    }
+            //}
+            //if (Input.GetKeyDown(KeyCode.Alpha3))
+            //{
+            //    if (parry1CooldownRoutine == null && player.sub1CharController != null)
+            //    {
 
-                    parry1CooldownRoutine = StartCoroutine(Parry1Routine());
-                }
-            }
-            if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                if (parry2CooldownRoutine == null)
-                {
+            //        parry1CooldownRoutine = StartCoroutine(Parry1Routine());
+            //    }
+            //}
+            //if (Input.GetKeyDown(KeyCode.Alpha4))
+            //{
+            //    if (parry2CooldownRoutine == null && player.sub1CharController != null)
+            //    {
 
-                    parry2CooldownRoutine = StartCoroutine(Parry2Routine());
-                }
-            }
+            //        parry2CooldownRoutine = StartCoroutine(Parry2Routine());
+            //    }
+            //}
 
+            // ESC 누를 시, 게임 정지 팝업
             if (Input.GetKeyDown(KeyCode.Escape) && !PopUpUI.IsPopUpActive && !Util.escPressed)
             {
                 UIManager.Instance.ShowPopUp<StagePopUp>();
@@ -113,12 +118,6 @@ namespace JYL
         }
         private void LateUpdate()
         {
-            // 프로그레스의 경우, 스테이지 매니저에서 웨이브 클리어 정보를 가져온다
-            if (pgTimer <= progressTime)
-            {
-                pgTimer += Time.deltaTime;
-                SetProgressBar();
-            }
         }
         private void Init()
         {
@@ -132,16 +131,48 @@ namespace JYL
             ultIllust.sprite = player.mainCharController.image;
             ultGageImg.sprite = player.mainCharController.icon;
             ultGageBackImg.sprite = player.mainCharController.icon;
-            parry1Img.sprite = player.sub1CharController.icon;
-            parry1BackImg.sprite = player.sub1CharController.icon;
-            parry2Img.sprite = player.sub2CharController.icon;
-            parry2BackImg.sprite = player.sub2CharController.icon;
+
+            SetParry();
 
             parryIllust.gameObject.SetActive(false);
             ultIllust.gameObject.SetActive(false);
 
-            //SubscribeEvents();
+            StageEnemyData currentStage = Manager.SDM.runtimeData[Manager.Game.selectWorldIndex - 1].subStages[Manager.Game.selectStageIndex - 1].stageEnemyData;
+            maxSeq = currentStage.sequence.Count - 1;
+            onSeqChanged.AddListener(SetProgressBar);
+        }
+        private void SetParry()
+        {
+            if (player.sub1CharController != null)
+            {
+                parry1Img.sprite = player.sub1CharController.icon;
+                parry1BackImg.sprite = player.sub1CharController.icon;
+            }
+            else
+            {
+                parry1Img.sprite = null;
+                Color color = parry1Img.color;
+                color.a = 0f;
+                parry1Img.color = color;
 
+                parry1BackImg.sprite = null;
+                parry1BackImg.color = color;
+            }
+            if (player.sub2CharController != null)
+            {
+                parry2Img.sprite = player.sub2CharController.icon;
+                parry2BackImg.sprite = player.sub2CharController.icon;
+            }
+            else
+            {
+                parry2Img.sprite = null;
+                Color color = parry2Img.color;
+                color.a = 0f;
+                parry2Img.color = color;
+
+                parry2BackImg.sprite = null;
+                parry2BackImg.color = color;
+            }
         }
         public void OnHpChanged()
         {
@@ -165,9 +196,9 @@ namespace JYL
         //    hpBar.onValueChanged.RemoveListener(OnHpBarChanged);
         //}
 
-        private void SetProgressBar()
+        private void SetProgressBar(int seq)
         {
-            pgBar.value = pgTimer / progressTime;
+            pgBar.value = (float)seq / maxSeq;
         }
         private void UseUltimate()
         {

@@ -50,15 +50,7 @@ namespace JYL
         private void Init()
         {
             charImage = GetUI<Image>("InvenCharImage");
-            CharactorController charCont;
-            foreach(CharactorController cont in characterLoader.charactorController)
-            {
-                if(cont.partySet == PartySet.Main)
-                {
-                    charCont = cont;
-                    charImage.sprite = charCont.image;
-                }
-            }
+            charImage.sprite = characterLoader.mainController.image;
         }
         private void OpenCharEnhance(PointerEventData eventData)
         {
