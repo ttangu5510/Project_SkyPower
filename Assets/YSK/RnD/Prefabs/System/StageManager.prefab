@@ -119,6 +119,6 @@ MonoBehaviour:
   endPoint: {fileID: 7422715768095209183}
   startPoint: {fileID: 1439556029962761394}
   speed: 1
-  mapLength: 240
+  mapLength: 249
   useGameSceneManagerTransition: 1
   enableTransition: 1

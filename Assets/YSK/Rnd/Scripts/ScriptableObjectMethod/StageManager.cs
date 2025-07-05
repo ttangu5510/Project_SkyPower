@@ -5,6 +5,7 @@ using YSK;
 using System.Collections;
 using UnityEngine.UI;
 using KYG_skyPower;
+using System.Net.NetworkInformation;
 
 namespace YSK
 {
@@ -44,6 +45,7 @@ namespace YSK
         {
             Debug.Log("=== StageManager Start 시작 ===");
             InitializeComponents();
+            //Manager.Game.onGameClear.AddListener(OnStageCompleted);
             Debug.Log("=== StageManager Start 완료 ===");
         }
 
@@ -51,6 +53,12 @@ namespace YSK
         {
             UpdateMovingMaps();
         }
+
+        private void OnDestroy()
+        {
+            //Manager.Game.onGameClear.RemoveListener(OnStageCompleted);
+        }
+
 
         #endregion
 
@@ -447,13 +455,7 @@ namespace YSK
 
         #region Public API
 
-        public void OnStageButtonClick(int mainStageID, int subStageID = 1)
-        {
-            if (!isTransitioning)
-            {
-                StartStageTransition(mainStageID, subStageID, false);
-            }
-        }
+
 
         public void ForceStage(int mainStageID, int subStageID)
         {
@@ -461,31 +463,38 @@ namespace YSK
             LoadStage(mainStageID, subStageID);
         }
 
-        public void ForceStageWithTransition(int mainStageID, int subStageID)
-        {
-            Debug.Log($"강제 스테이지 이동 (전환 화면 사용): {mainStageID}-{subStageID}");
-            StartStageTransition(mainStageID, subStageID, false);
-        }
+
 
         public void OnStageCompleted()
         {
             int currentMainStage = PlayerPrefs.GetInt("SelectedMainStage", 1);
             int currentSubStage = PlayerPrefs.GetInt("SelectedSubStage", 1);
-            int score = Manager.Score.Score; // 현재 점수 가져오기
-
-            Debug.Log($"스테이지 완료: {currentMainStage}-{currentSubStage}, 점수: {score}");
             
+            Debug.Log($"=== 스테이지 완료 처리 시작: {currentMainStage}-{currentSubStage} ===");
+
+            // 점수 가져오기
+            int score = Manager.Score?.Score ?? 0;
+            Debug.Log($"현재 점수: {score}");
+
+            // StageDataManager를 통한 완전한 처리
             if (dataManager != null)
             {
-                dataManager.UpdateStageScore(currentMainStage, currentSubStage, score);
-                dataManager.CompleteStage(currentMainStage, currentSubStage, Time.time);
-                UnlockNextStage(currentMainStage, currentSubStage);
+                dataManager.CompleteStageWithSave(currentMainStage, currentSubStage, score, Time.time);
+                Debug.Log("StageDataManager를 통한 완료 처리 완료");
             }
-            
+            else
+            {
+                Debug.LogError("StageDataManager가 null입니다!");
+            }
+
+            // 게임 클리어 처리
             if (Manager.Game != null)
             {
                 Manager.Game.SetGameClear();
+                Debug.Log("게임 클리어 처리 완료");
             }
+
+            Debug.Log($"=== 스테이지 완료 처리 완료: {currentMainStage}-{currentSubStage} ===");
         }
 
         public void ResetStageProgress()
@@ -497,11 +506,7 @@ namespace YSK
             Debug.Log("스테이지 진행 상태 초기화: 1-1");
         }
 
-        public void ChangeStage(int newStageID)
-        {
-            Debug.Log($"ChangeStage 호출: 스테이지 {newStageID}로 변경");
-            LoadStage(newStageID);
-        }
+
 
         #endregion
 

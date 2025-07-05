@@ -52,6 +52,7 @@ namespace YSK
 
             // 초기화 완료 후 이벤트 발생
             OnStageDataChanged?.Invoke();
+       
         }
         /// <summary>
         /// StageData 스크립터블 오브젝트들을 자동으로 찾아서 설정
@@ -405,6 +406,83 @@ namespace YSK
             PlayerPrefs.DeleteKey(STAGE_DATA_KEY);
             InitializeRuntimeData();
             Debug.Log("모든 스테이지 진행도가 초기화되었습니다.");
+        }
+
+        /// <summary>
+        /// RuntimeData를 세이브 파일과 완전히 동기화하고 저장
+        /// </summary>
+        public void SyncAndSaveRuntimeData()
+        {
+            if (Manager.Game != null && Manager.Game.saveFiles != null && 
+                Manager.Game.currentSaveIndex >= 0 && 
+                Manager.Game.currentSaveIndex < Manager.Game.saveFiles.Length)
+            {
+                GameData saveData = Manager.Game.saveFiles[Manager.Game.currentSaveIndex];
+                
+                // RuntimeData를 세이브 파일과 동기화
+                SyncRuntimeDataWithStageInfo();
+                
+                // 세이브 파일 저장
+                SaveRuntimeData();
+                
+                Debug.Log("RuntimeData 동기화 및 세이브 파일 저장 완료");
+            }
+            else
+            {
+                Debug.LogWarning("Manager.Game 또는 세이브 파일이 유효하지 않습니다!");
+            }
+        }
+
+        /// <summary>
+        /// 스테이지 완료 시 모든 데이터를 동기화하고 저장
+        /// </summary>
+        public void CompleteStageWithSave(int stageID, int subStageID, int score, float completionTime)
+        {
+            // 1. 점수 업데이트
+            UpdateStageScore(stageID, subStageID, score);
+            
+            // 2. 스테이지 완료 처리
+            CompleteStage(stageID, subStageID, completionTime);
+            
+            // 3. 다음 스테이지 언락
+            var nextStage = CalculateNextStage(stageID, subStageID);
+            if (!nextStage.isGameComplete)
+            {
+                UnlockStage(nextStage.mainStage);
+                UnlockSubStage(nextStage.mainStage, nextStage.subStage);
+            }
+            
+            // 4. 세이브 파일과 동기화
+            SyncAndSaveRuntimeData();
+            
+            // 5. UI 업데이트
+            OnStageDataChanged?.Invoke();
+            
+            Debug.Log($"스테이지 {stageID}-{subStageID} 완료 처리 및 저장 완료");
+        }
+
+        /// <summary>
+        /// 다음 스테이지 계산
+        /// </summary>
+        private (int mainStage, int subStage, bool isGameComplete) CalculateNextStage(int currentMainStage, int currentSubStage)
+        {
+            int nextSubStage = currentSubStage + 1;
+            
+            if (nextSubStage > 5) // 최대 서브스테이지 수
+            {
+                int nextMainStage = currentMainStage + 1;
+                
+                if (nextMainStage > 4) // 최대 메인스테이지 수
+                {
+                    return (0, 0, true); // 게임 클리어
+                }
+                
+                return (nextMainStage, 1, false);
+            }
+            else
+            {
+                return (currentMainStage, nextSubStage, false);
+            }
         }
 
 

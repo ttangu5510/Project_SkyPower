@@ -16,7 +16,7 @@ namespace YSK
     public class GameSceneManager : Singleton<GameSceneManager>
     {
         [Header("Transition Settings")]
-        [SerializeField] private bool enableTransition = true;
+        [SerializeField] private bool enableTransition = false;
         [SerializeField] private bool showTransitionOnSceneStart;
         [SerializeField] private float minTransitionTime = 2f;
 
