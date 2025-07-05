@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762c262d5dc83e747b29a16089a6310f, type: 3}
+  m_Name: "Equipment_30028_\uC804\uC7A5\uC758 \uD074\uB7ED \uC54C\uB808\uADF8\uB85C"
+  m_EditorClassIdentifier: 
+  Equip_Id: 30028
+  Equip_Grade: Normal
+  Equip_Name: "\uC804\uC7A5\uC758 \uD074\uB7ED \uC54C\uB808\uADF8\uB85C"
+  Equip_Type: accessory
+  Equip_Set_Type: "\uC804\uC7A5\uC758"
+  Equip_Img: bat_ca.png
+  Equip_Level: 1
+  Equip_Maxlevel: 1
+  Equip_Upgrade_Default: 0
+  Equip_Upgrade_Plus: 0
+  Stat_Type: '-'
+  Base_Value: 0
+  Per_Level: 0
+  Effect_Trigger: weapon Set_Type == amor Set_Type == accessory Set_Type
+  Effect_Timing: kill enemy
+  Effect_Type: Shild
+  Effect_Value: 1
+  Effect_Time: 0
+  Effect_Chance: 0
+  Effect_Desc: "\u2022\uBAB9 \uCC98\uCE58 \uC2DC \uC77C\uC815 \uD655\uB960\uB85C
+    \uC274\uB4DC\uAC00 \uC0DD\uC131 \uB429\uB2C8\uB2E4."

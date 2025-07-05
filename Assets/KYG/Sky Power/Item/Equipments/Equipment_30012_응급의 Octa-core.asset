@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762c262d5dc83e747b29a16089a6310f, type: 3}
+  m_Name: "Equipment_30012_\uC751\uAE09\uC758 Octa-core"
+  m_EditorClassIdentifier: 
+  Equip_Id: 30012
+  Equip_Grade: Legend
+  Equip_Name: "\uC751\uAE09\uC758 Octa-core"
+  Equip_Type: armor
+  Equip_Set_Type: "\uC751\uAE09\uC758"
+  Equip_Img: emg_oct.png
+  Equip_Level: 1
+  Equip_Maxlevel: 5
+  Equip_Upgrade_Default: 1000
+  Equip_Upgrade_Plus: 1000
+  Stat_Type: Hp
+  Base_Value: 100
+  Per_Level: 6
+  Effect_Trigger: '-'
+  Effect_Timing: '-'
+  Effect_Type: '-'
+  Effect_Value: 0
+  Effect_Time: 0
+  Effect_Chance: 0
+  Effect_Desc: '-'

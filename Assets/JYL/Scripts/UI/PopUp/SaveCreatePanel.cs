@@ -10,6 +10,7 @@ namespace JYL
     public class SaveCreatePanel : BaseUI
     {
         [SerializeField] CharacterInit characterInit;
+        [SerializeField] EquipController equipController;
         [SerializeField] int maxInputCount = 8;
         private TMP_InputField inputField;
         private Image bgImage;
@@ -21,6 +22,7 @@ namespace JYL
 
         private void OnEnable()
         {
+            equipController = GetComponent<EquipController>();
             characterInit = GetComponent<CharacterInit>();
             bgImage = GetUI<Image>("SaveInput");
             warningText = GetUI<TMP_Text>("SaveWarningText");
@@ -38,7 +40,7 @@ namespace JYL
         {
             inputField.onEndEdit.RemoveListener(OnInputEnd);
             inputField.onValueChanged.RemoveListener(OnInputChanged);
-
+            
             GetEvent("SaveConfirmBtn").Click -= OnStartClick;
         }
         private void OnStartClick(PointerEventData eventData)
@@ -47,6 +49,9 @@ namespace JYL
             {
                 int index = Manager.Game.currentSaveIndex;
                 characterInit.InitCharacterInfo();
+                // TODO: 장비 배열 만들어서 넣기
+                equipController.CreateEquipInfo(); // SO로 동적배열 만듬
+                equipController.SaveFileInit(); // SO정보를 넣음
                 Manager.Save.GameSave(Manager.Game.saveFiles[index], index+1,inputField.text);
                 Manager.Game.ResetSaveRef();
                 SceneManager.LoadSceneAsync("bMainScene_JYL");

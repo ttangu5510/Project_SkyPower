@@ -1,0 +1,32 @@
+장비 ID,등급,장비 이름,장비 종류,장비 세트 타입,장비 이미지,초기 레벨,최대 레벨,요구 재화 초기값,요구 재화 증가값,적용되는 수치,초기 값,변동값,발동 조건,적용 시점,적용 타입,적용 수치,지속 시간,발동 확률,설명
+Equip_Id,Equip_Grade,Equip_Name,Equip_Type,Equip_Set_Type,Equip_Img,Equip_Level,Equip_Maxlevel,Equip_Upgrade_Default,Equip_Upgrade_Plus,Stat_Type,Base_Value,Per_Level,Effect_Trigger,Effect_Timing,Effect_Type,Effect_Value,Effect_Time,Effect_Chance,Effect_Desc
+30001,Legend,충전의 오버드라이브,weapon,충전의,chg_ovd.png,1,5,1000,1000,Atk,20,10,-,-,-,-,-,-,-
+30002,Legend,응급의 오버드라이브,weapon,응급의,emg_ovd.png,1,5,1000,1000,Atk,20,10,-,-,-,-,-,-,-
+30003,Legend,전장의 오버드라이브,weapon,전장의,bat_ovd.png,1,5,1000,1000,Atk,20,10,-,-,-,-,-,-,-
+30004,Legend,맹공의 오버드라이브,weapon,맹공의,sud_ovd.png,1,5,1000,1000,Atk,20,10,-,-,-,-,-,-,-
+30005,Legend,광속의 오버드라이브,weapon,광속의,lit_ovd.png,1,5,1000,1000,Atk,20,10,-,-,-,-,-,-,-
+30006,Normal,충전의 디스토션,weapon,충전의,chg_dis.png,1,5,1000,1000,Atk,10,5,-,-,-,-,-,-,-
+30007,Normal,응급의 디스토션,weapon,응급의,emg_dis.png,1,5,1000,1000,Atk,10,5,-,-,-,-,-,-,-
+30008,Normal,전장의 디스토션,weapon,전장의,bat_dis.png,1,5,1000,1000,Atk,10,5,-,-,-,-,-,-,-
+30009,Normal,맹공의 디스토션,weapon,맹공의,sud_dis.png,1,5,1000,1000,Atk,10,5,-,-,-,-,-,-,-
+30010,Normal,광속의 디스토션,weapon,광속의,lit_dis.png,1,5,1000,1000,Atk,10,5,-,-,-,-,-,-,-
+30011,Legend,충전의 Octa-core,armor,충전의,chg_oct.png,1,5,1000,1000,Hp,100,6,-,-,-,-,-,-,-
+30012,Legend,응급의 Octa-core,armor,응급의,emg_oct.png,1,5,1000,1000,Hp,100,6,-,-,-,-,-,-,-
+30013,Legend,전장의 Octa-core,armor,전장의,bat_oct.png,1,5,1000,1000,Hp,100,6,-,-,-,-,-,-,-
+30014,Legend,맹공의 Octa-core,armor,맹공의,sud_oct.png,1,5,1000,1000,Hp,100,6,-,-,-,-,-,-,-
+30015,Legend,광속의 Octa-core,armor,광속의,lit_oct.png,1,5,1000,1000,Hp,100,6,,,,,,,
+30016,Normal,충전의 Dual-core,armor,충전의,chg_dct.png,1,5,1000,1000,Hp,50,3,-,-,-,-,-,-,-
+30017,Normal,응급의 Dual-core,armor,응급의,emg_dct.png,1,5,1000,1000,Hp,50,3,-,-,-,-,-,-,-
+30018,Normal,전장의 Dual-core,armor,전장의,bat_dct.png,1,5,1000,1000,Hp,50,3,-,-,-,-,-,-,-
+30019,Normal,맹공의 Dual-core,armor,맹공의,sud_dct.png,1,5,1000,1000,Hp,50,3,-,-,-,-,-,-,-
+30020,Normal,광속의 Dual-core,armor,광속의,lit_dct.png,1,5,1000,1000,Hp,50,3,,,,,,,
+30021,Legend,충전의 클럭 프레스토,accessory,충전의,chg_cp.png,1,1,0,0,-,0,0,weapon Set_Type == amor Set_Type == accessory Set_Type,game start,UltGage,1pre / 1s,game end,100%,•게임 시작과 종료 까지 소량의 궁극기 게이지가 지속적으로 증가 합니다
+30022,Legend,응급의 클럭 프레스토,accessory,응급의,emg_cp.png,1,1,0,0,-,0,0,weapon Set_Type == amor Set_Type == accessory Set_Type,using parrying,Hp,10%,a moment,100%,•패링 발동 시 체력을 회복 합니다.
+30023,Legend,전장의 클럭 프레스토,accessory,전장의,bat_cp.png,1,1,0,0,-,0,0,weapon Set_Type == amor Set_Type == accessory Set_Type,kill enemy,Shild,1,a moment,10%,•몹 처치 시 일정 확률로 쉴드가 생성 됩니다.
+30024,Legend,맹공의 클럭 프레스토,accessory,맹공의,sud_cp.png,1,1,0,0,-,0,0,weapon Set_Type == amor Set_Type == accessory Set_Type,game start,Atk,10%,a moment,100%,•게임 시작과 동시에 소량의 공격력이 증가 합니다.
+30025,Legend,광속의 클럭 프레스토,accessory,광속의,lit_cp.png,1,1,0,0,-,0,0,weapon Set_Type == amor Set_Type == accessory Set_Type,using  ult,AtkSpeed,1,5s,100%,•궁극기 발동 시 짧은 시간 동안 대량의 공격 속도가 상승 합니다.
+30026,Normal,충전의 클럭 알레그로,accessory,충전의,chg_ca.png,1,1,0,0,-,0,0,weapon Set_Type == amor Set_Type == accessory Set_Type,game start,UltGage,1pre / 2s,game end,100%,•게임 시작과 종료 까지 소량의 궁극기 게이지가 지속적으로 증가 합니다
+30027,Normal,응급의 클럭 알레그로,accessory,응급의,emg_ca.png,1,1,0,0,-,0,0,weapon Set_Type == amor Set_Type == accessory Set_Type,using parrying,Hp,5%,a moment,100%,•패링 발동 시 체력을 회복 합니다.
+30028,Normal,전장의 클럭 알레그로,accessory,전장의,bat_ca.png,1,1,0,0,-,0,0,weapon Set_Type == amor Set_Type == accessory Set_Type,kill enemy,Shild,1,a moment,5%,•몹 처치 시 일정 확률로 쉴드가 생성 됩니다.
+30029,Normal,맹공의 클럭 알레그로,accessory,맹공의,sud_ca.png,1,1,0,0,-,0,0,weapon Set_Type == amor Set_Type == accessory Set_Type,game start,Atk,5%,a moment,100%,•게임 시작과 동시에 소량의 공격력이 증가 합니다.
+30030,Normal,광속의 클럭 알레그로,accessory,광속의,lit_ca.png,1,1,0,0,-,0,0,weapon Set_Type == amor Set_Type == accessory Set_Type,using  ult,AtkSpeed,0.5,5s,100%,•궁극기 발동 시 짧은 시간 동안 대량의 공격 속도가 상승 합니다.

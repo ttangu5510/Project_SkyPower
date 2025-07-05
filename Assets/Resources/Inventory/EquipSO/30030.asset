@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762c262d5dc83e747b29a16089a6310f, type: 3}
+  m_Name: 30030
+  m_EditorClassIdentifier: 
+  id: 30030
+  equipName: "\uAD11\uC18D\uC758 \uD074\uB7ED \uC54C\uB808\uADF8\uB85C"
+  type: 0
+  grade: 0
+  setType: 4
+  icon: {fileID: 21300000, guid: e2bb322f18643e94d9812997b90ead70, type: 3}
+  level: 1
+  maxLevel: 1
+  upgradeGold: 0
+  upgradeGoldPlus: 0
+  equipValue: 0
+  equipValuePlus: 0
+  Effect_Desc: "\u2022\uAD81\uADF9\uAE30 \uBC1C\uB3D9 \uC2DC \uC9E7\uC740 \uC2DC\uAC04
+    \uB3D9\uC548 \uB300\uB7C9\uC758 \uACF5\uACA9 \uC18D\uB3C4\uAC00 \uC0C1\uC2B9
+    \uD569\uB2C8\uB2E4."

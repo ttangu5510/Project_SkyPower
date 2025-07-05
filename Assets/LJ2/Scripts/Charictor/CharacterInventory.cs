@@ -47,7 +47,6 @@ public struct CharacterSave
 
     [SerializeField] public int step;
     [SerializeField] public PartySet partySet;
-    [SerializeField] public int[] equipId;
     public CharacterSave(int id)
     {
         this.id = id;
@@ -71,10 +70,6 @@ public struct CharacterSave
                 break;
         }
         this.step = 0; // Default step
-        equipId = new int[3];
-        equipId[0] = -1;
-        equipId[1] = -1;
-        equipId[2] = -1;
     }
 }
 public enum PartySet { Main, Sub1, Sub2, None }

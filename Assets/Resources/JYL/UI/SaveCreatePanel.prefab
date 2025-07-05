@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7935303802878413191}
   - component: {fileID: 7380987266883016506}
   - component: {fileID: 3915693806400938617}
+  - component: {fileID: 6611439164956676396}
   m_Layer: 5
   m_Name: SaveCreatePanel
   m_TagString: Untagged
@@ -93,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterInit: {fileID: 0}
+  equipController: {fileID: 0}
   maxInputCount: 8
 --- !u!114 &3915693806400938617
 MonoBehaviour:
@@ -110,6 +112,18 @@ MonoBehaviour:
     _filePath: Resources/CSV/ProjectSkyPower_DataTable - Character_Table.csv
     resourcePath: CSV/ProjectSkyPower_DataTable - Character_Table
     <SplitSymbol>k__BackingField: 44
+--- !u!114 &6611439164956676396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48632441911252375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae655c24121cb84ba941665d418409d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &629275734820227410
 GameObject:
   m_ObjectHideFlags: 0

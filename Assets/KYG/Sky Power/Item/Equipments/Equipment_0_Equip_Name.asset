@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762c262d5dc83e747b29a16089a6310f, type: 3}
+  m_Name: Equipment_0_Equip_Name
+  m_EditorClassIdentifier: 
+  Equip_Id: 0
+  Equip_Grade: Equip_Grade
+  Equip_Name: Equip_Name
+  Equip_Type: Equip_Type
+  Equip_Set_Type: Equip_Set_Type
+  Equip_Img: Equip_Img
+  Equip_Level: 0
+  Equip_Maxlevel: 0
+  Equip_Upgrade_Default: 0
+  Equip_Upgrade_Plus: 0
+  Stat_Type: Stat_Type
+  Base_Value: 0
+  Per_Level: 0
+  Effect_Trigger: Effect_Trigger
+  Effect_Timing: Effect_Timing
+  Effect_Type: Effect_Type
+  Effect_Value: 0
+  Effect_Time: 0
+  Effect_Chance: 0
+  Effect_Desc: Effect_Desc

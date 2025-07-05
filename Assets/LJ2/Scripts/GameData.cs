@@ -11,6 +11,8 @@ public partial class GameData : SaveData
 
     public CharacterInventory characterInventory;
     public StageInfo[] stageInfo;
+    public EquipSave[] equipInfo;
+    public int[] wearingId;
     public bool isEmpty => string.IsNullOrEmpty(playerName);
 
     public GameData()
@@ -18,6 +20,7 @@ public partial class GameData : SaveData
         // Initialize character inventory
         characterInventory = new CharacterInventory();
         gold = 1000;
+        wearingId = new int[3];
     }
 
 }
@@ -31,4 +34,10 @@ public struct StageInfo
     public int score;
     public bool unlock;
     public bool isClear;
+}
+[System.Serializable]
+public struct EquipSave
+{
+    public int id;
+    public int level;
 }

@@ -200,6 +200,8 @@ namespace JYL
         {
             pgBar.value = (float)seq / maxSeq;
         }
+
+        //TODO : ±Ã±Ø±â »ç¿ë ½Ã ¿¬°á
         private void UseUltimate()
         {
             UltGage = 0;
@@ -244,7 +246,7 @@ namespace JYL
         {
             if (parry2CooldownRoutine == null)
             {
-                parry2CooldownRoutine = StartCoroutine(Parry1Routine());
+                parry2CooldownRoutine = StartCoroutine(Parry2Routine());
             }
         }
         IEnumerator Parry2Routine()

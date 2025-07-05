@@ -20,7 +20,6 @@ namespace JYL
         {
             if(Input.GetKeyDown(KeyCode.Escape))
             {
-                Debug.Log($"{PopUpUI.IsPopUpActive}, {Util.escPressed}");
             }
             if(Input.GetKeyDown(KeyCode.Escape)&&!PopUpUI.IsPopUpActive&&!Util.escPressed)
             {

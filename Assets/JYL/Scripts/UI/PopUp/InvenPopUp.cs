@@ -1,10 +1,11 @@
+using KYG_skyPower;
+using LJ2;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using LJ2;
-using TMPro;
 
 namespace JYL
 {
@@ -18,39 +19,49 @@ namespace JYL
         private TMP_Text ap => GetUI<TMP_Text>("InvenCharAPText");
         private Image charImage;
         private CharacterSaveLoader characterLoader;
+        private CharactorController mainController=>characterLoader.mainController;
 
+        private new void Awake()
+        {
+            base.Awake();
+            characterLoader = GetComponent<CharacterSaveLoader>();
+            Init();
+            
+        }
         private void OnEnable()
         {
+            Init();
         }
         void Start()
         {
             
             // 장비 클릭시 활성화
-            characterLoader = GetComponent<CharacterSaveLoader>();
-            characterLoader.GetCharPrefab();
-            Init();
 
             invenScroll.SetActive(false);
-            GetEvent("CharEnhanceBtn1").Click += OpenCharEnhance;
-            GetEvent("WeaponBtn").Click += OpenWPInven;
-            GetEvent("WPEnhanceBtn2").Click += OpenWPEnhance;
-            GetEvent("ArmorBtn").Click += OpenAMInven;
-            GetEvent("AMEnhanceBtn3").Click += OpenAMEnhance;
-            GetEvent("AccessoryBtn").Click += OpenACInven;
+            GetEvent("CharEnhanceBtn").Click += OpenCharEnhance;
+            //GetEvent("WeaponBtn").Click += OpenWPInven;
+            GetEvent("WPEnhanceBtn1").Click += OpenWPEnhance;
+            //GetEvent("ArmorBtn").Click += OpenAMInven;
+            GetEvent("AMEnhanceBtn2").Click += OpenAMEnhance;
+            //GetEvent("AccessoryBtn").Click += OpenACInven;
 
             // 현재 캐릭터의 정보가 표시된다
             // index는 UIManager가 관리
             // GameManager.Instance.character[index]
-            invenCharName.text = "캐릭터1";
-            level.text = "24";
-            hp.text = "2040";
-            ap.text = "332";
-            Init();
+
         }
         private void Init()
         {
+            characterLoader.GetCharPrefab();
             charImage = GetUI<Image>("InvenCharImage");
-            charImage.sprite = characterLoader.mainController.image;
+            charImage.sprite = mainController.image;
+            Debug.Log($"{invenCharName}_{invenCharName.GetType()}_{invenCharName.GetType().Name}");
+            Debug.Log($"{mainController.charName}");
+            Debug.Log($"{invenCharName.text} : {mainController.charName}");
+            invenCharName.text = $"{mainController.charName}";
+            level.text = $"{mainController.level}";
+            hp.text = $"{mainController.Hp}";
+            ap.text = $"{mainController.attackDamage}";
         }
         private void OpenCharEnhance(PointerEventData eventData)
         {
@@ -80,9 +91,35 @@ namespace JYL
             UIManager.Instance.ShowPopUp<EnhancePopUp>();
         }
 
-        private void OpenWPInven(PointerEventData eventData)
-        {
-            invenScroll.SetActive(true);
+        //private void OpenWPInven(PointerEventData eventData)
+        //{
+        //    invenScroll.SetActive(true);
+        //    foreach (Transform child in invenScroll.transform)
+        //        //Destroy(child.gameObject);
+
+            // 무기 리스트 불러오기
+            //var weaponList = EquipmentInvenManager.Instance.GetItemList("weapon");
+            //Debug.Log("무기 개수: " + weaponList.Count);
+            //GameObject itemSlotPrefab = Resources.Load<GameObject>("Inventory/WeaponSlot");
+
+            //int idx = 0;
+            //foreach (var weapon in weaponList)
+            //{
+            //    //Debug.Log($"슬롯 생성: {weapon.Equip_Name} ({idx++})");
+            //    //GameObject slot = Instantiate(itemSlotPrefab, invenScroll.transform);
+            //    //slot.GetComponentInChildren<TMP_Text>().text = weapon.Equip_Name;
+            //    //slot.GetComponentInChildren<Image>().sprite = Resources.Load<Sprite>("Sprites/Equipment/" + weapon.Equip_Img);
+
+            //    //var capturedWeapon = weapon;
+            //    //slot.GetComponent<Button>().onClick.AddListener(() =>
+            //    //{
+            //    //    // 선택 캐릭터에 장비 착용
+            //    //    EquipmentInvenManager.Instance.EquipItem(mainController.id, capturedWeapon);
+            //    //    mainController.ApplyEquipmentStat(); // (이 함수는 CharactorController에 추가 필요)
+            //    //});
+            //}
+        //}
+        
             // 인벤토리 매니저에서 무기로 타입 지정해서 정보들 가져옴
             // items = InvenManager.Instance.GetItemList(Type weapon)
             // items를 가지고 invenscroll 구현
@@ -92,19 +129,57 @@ namespace JYL
             // 해당 UI 클릭 시, 장착중이던 장비와 교환
             // InvenManager.Instance.Add()
             // InvenManager.Instance.RemoveAt(인벤ID값으로 찾아 지우기)
-        }
+        
 
         // 아이템 교체 함수
         // 캐릭터 컨트롤러에 장비중인 아이템의 ID값 변경 필요
 
-        private void OpenAMInven(PointerEventData eventData)
-        {
-            invenScroll.SetActive(true);
-        }
-        private void OpenACInven(PointerEventData eventData)
-        {
-            invenScroll.SetActive(true);
-        }
+//        private void OpenAMInven(PointerEventData eventData)
+//        {
+//            invenScroll.SetActive(true);
+//            foreach (Transform child in invenScroll.transform)
+//                Destroy(child.gameObject);
+
+//            var armorList = EquipmentInvenManager.Instance.GetItemList("armor");
+//            GameObject itemSlotPrefab = Resources.Load<GameObject>("Inventory/ArmorSlot");
+
+//            foreach (var armor in armorList)
+//            {
+//                GameObject slot = Instantiate(itemSlotPrefab, invenScroll.transform); 
+//                //slot.GetComponentInChildren<TMP_Text>().text = armor.Equip_Name; 
+//                //slot.GetComponentInChildren<Image>().sprite = Resources.Load<Sprite>("Sprites/Equipment/" + armor.Equip_Img); 
+
+//                var capturedArmor = armor; 
+//                slot.GetComponent<Button>().onClick.AddListener(() =>
+//                {
+//                    EquipmentInvenManager.Instance.EquipItem(mainController.id, capturedArmor);
+//                   // mainController.ApplyEquipmentStat();
+//                });
+//            }
+//        }
+//        private void OpenACInven(PointerEventData eventData)
+//        {
+//            invenScroll.SetActive(true);
+//            foreach (Transform child in invenScroll.transform)
+//                Destroy(child.gameObject);
+
+//            var accessoryList = EquipmentInvenManager.Instance.GetItemList("accessory"); 
+//            GameObject itemSlotPrefab = Resources.Load<GameObject>("Inventory/AccessorySlot"); 
+
+//            foreach (var accessory in accessoryList)
+//            {
+//                GameObject slot = Instantiate(itemSlotPrefab, invenScroll.transform);
+//                //slot.GetComponentInChildren<TMP_Text>().text = accessory.Equip_Name;
+//                //slot.GetComponentInChildren<Image>().sprite = Resources.Load<Sprite>("Sprites/Equipment/" + accessory.Equip_Img);
+
+//                var capturedAccessory = accessory;
+//                slot.GetComponent<Button>().onClick.AddListener(() =>
+//                {
+//                    EquipmentInvenManager.Instance.EquipItem(mainController.id, capturedAccessory);
+//                   // mainController.ApplyEquipmentStat();
+//                });
+//            }
+//        }
     }
 }
 

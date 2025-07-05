@@ -1,5 +1,5 @@
 {
-    "playerName": "tt",
+    "playerName": "gggd",
     "gold": 1000,
     "characterInventory": {
         "characters": [
@@ -7,309 +7,169 @@
                 "id": 10001,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10002,
                 "level": -1,
-                "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "step": 1,
+                "partySet": 3
             },
             {
                 "id": 10003,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10004,
-                "level": -1,
+                "level": 10,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10005,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10006,
-                "level": -1,
+                "level": 1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10007,
-                "level": -1,
+                "level": 4,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10008,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10009,
-                "level": 1,
+                "level":5,
                 "step": 0,
-                "partySet": 0,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 0
             },
             {
                 "id": 10010,
-                "level": -1,
+                "level": 6,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10011,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10012,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10013,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10014,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10015,
                 "level": 1,
                 "step": 0,
-                "partySet": 1,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 1
             },
             {
                 "id": 10016,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10017,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10018,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10019,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10020,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10021,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10022,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10023,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10024,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10025,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10026,
                 "level": -1,
                 "step": 0,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             },
             {
                 "id": 10027,
                 "level": 1,
                 "step": 0,
-                "partySet": 2,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 2
             },
             {
                 "id": 10028,
                 "level": -1,
                 "step": 1,
-                "partySet": 3,
-                "equipId": [
-                    -1,
-                    -1,
-                    -1
-                ]
+                "partySet": 3
             }
         ]
     },
@@ -319,34 +179,34 @@
             "stage": 1,
             "score": 0,
             "unlock": true,
-            "isClear": false
+            "isClear": true
         },
         {
             "world": 1,
             "stage": 2,
             "score": 0,
-            "unlock": false,
-            "isClear": false
+            "unlock": true,
+            "isClear": true
         },
         {
             "world": 1,
             "stage": 3,
             "score": 0,
-            "unlock": false,
-            "isClear": false
+            "unlock": true,
+            "isClear": true
         },
         {
             "world": 1,
             "stage": 4,
             "score": 0,
-            "unlock": false,
-            "isClear": false
+            "unlock": true,
+            "isClear": true
         },
         {
             "world": 1,
             "stage": 5,
             "score": 0,
-            "unlock": false,
+            "unlock": true,
             "isClear": false
         },
         {
@@ -454,5 +314,132 @@
             "unlock": false,
             "isClear": false
         }
+    ],
+    "equipInfo": [
+        {
+            "id": 30001,
+            "level": -1
+        },
+        {
+            "id": 30002,
+            "level": 1
+        },
+        {
+            "id": 30003,
+            "level": -1
+        },
+        {
+            "id": 30004,
+            "level": 1
+        },
+        {
+            "id": 30005,
+            "level": -1
+        },
+        {
+            "id": 30006,
+            "level": -1
+        },
+        {
+            "id": 30007,
+            "level": 1
+        },
+        {
+            "id": 30008,
+            "level": -1
+        },
+        {
+            "id": 30009,
+            "level": 1
+        },
+        {
+            "id": 30010,
+            "level": -1
+        },
+        {
+            "id": 30011,
+            "level": -1
+        },
+        {
+            "id": 30012,
+            "level": 1
+        },
+        {
+            "id": 30013,
+            "level": -1
+        },
+        {
+            "id": 30014,
+            "level": 1
+        },
+        {
+            "id": 30015,
+            "level": -1
+        },
+        {
+            "id": 30016,
+            "level": 1
+        },
+        {
+            "id": 30017,
+            "level": -1
+        },
+        {
+            "id": 30018,
+            "level": 1
+        },
+        {
+            "id": 30019,
+            "level": -1
+        },
+        {
+            "id": 30020,
+            "level": -1
+        },
+        {
+            "id": 30021,
+            "level": 1
+        },
+        {
+            "id": 30022,
+            "level": -1
+        },
+        {
+            "id": 30023,
+            "level": -1
+        },
+        {
+            "id": 30024,
+            "level": 1
+        },
+        {
+            "id": 30025,
+            "level": -1
+        },
+        {
+            "id": 30026,
+            "level": 1
+        },
+        {
+            "id": 30027,
+            "level": -1
+        },
+        {
+            "id": 30028,
+            "level": 1
+        },
+        {
+            "id": 30029,
+            "level": -1
+        },
+        {
+            "id": 30030,
+            "level": -1
+        }
+    ],
+    "wearingId": [
+        0,
+        0,
+        0
     ]
 }
